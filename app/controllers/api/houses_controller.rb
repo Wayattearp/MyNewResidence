@@ -1,7 +1,7 @@
 class Api::HousesController < ApplicationController
 
     def index
-        # @houses = House.with_query(params).includes(:city, :state, :id)
+        @houses = House.all
         render :index
     end
 

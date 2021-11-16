@@ -13,16 +13,16 @@ City.delete_all
 State.delete_all
 
 
-newyork = City.create!(name: "new york", house_id: 1)
-brooklyn = City.create!(name: "brooklyn", house_id: 1)
-queens = City.create!(name: "queens", house_id: 1)
-bronx = City.create!(name: "bronx",house_id: 1)
+newyork = City.create!(name: "new york")
+brooklyn = City.create!(name: "brooklyn")
+queens = City.create!(name: "queens")
+bronx = City.create!(name: "bronx")
 cities = [newyork, brooklyn, queens, bronx]
 descriptions = [
   "best deal in market"
 ]
 
-ny = State.create!(name: "NY", house_id: 1)
+ny = State.create!(name: "NY")
 zipcodes = [
   10001,
   10002,

@@ -4,7 +4,7 @@ import GreetingContainer from "./Greeting/greeting_container";
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute } from '../util/route_util';
-import HousesIndexContainer from '../components/Houses/house_index_container'
+import HouseIndexContainer from '../components/Houses/house_index_container'
 const App = () => (
     <div>
         <header>
@@ -16,7 +16,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route exact path="/" component={HousesIndexContainer} />
+            <Route exact path="/" component={HouseIndexContainer} />
         </Switch>
     </div>
 );

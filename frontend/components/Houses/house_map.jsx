@@ -1,9 +1,11 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
 
+
+
 const mapOptions = {
     center: { lat: 40.80996540451154, lng: -73.95014070092049 }, //Harlem
-    zoom: 15
+    zoom: 12
 };
 
 class HouseMap extends React.Component {

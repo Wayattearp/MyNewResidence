@@ -5,7 +5,21 @@ export default class MarkerManager {
     }
 
     updateMarkers(houses) {
-        console.log("updating house markers");
-        console.log(houses)
+        if (houses) {
+            houses.forEach(house => {
+                this.createMarkerFromHouse(house);
+            });
+        }
+    }
+
+    createMarkerFromHouse(house) {
+        const position = new google.maps.LatLng(house.lat, house.lng);
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            houseId: house.id
+        });
+
+        this.markers[marker.houseId] = marker;
     }
 }

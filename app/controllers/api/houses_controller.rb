@@ -27,7 +27,6 @@ class Api::HousesController < ApplicationController
   end
 
   def bounds
-    # debugger
     params[:bounds]
   end
 

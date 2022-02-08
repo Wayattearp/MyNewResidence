@@ -13,11 +13,11 @@ export const fetchHouse = (houseId) => {
   });
 };
 
-export const createHouse = (data) => {
+export const createHouse = (houseForm) => {
   return $.ajax({
     method: "POST",
     url: "api/houses",
-    data,
+    data: houseForm,
     contentType: false,
     processData: false,
   });

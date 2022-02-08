@@ -33,3 +33,9 @@ export const fetchHouse = (houseId) => {
         });
     };
 };
+
+export const createHouse = house => dispatch => (
+    HousesAPIUtil.createHouse(house).then(house => (
+        dispatch(receiveHouse(house))
+    ))
+);

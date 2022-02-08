@@ -7,7 +7,7 @@ import HouseIndexItem from './house_index_item';
          
      }
     componentDidMount() {
-            this.props.fetchAllHouses()
+        
         }
 
         render() {

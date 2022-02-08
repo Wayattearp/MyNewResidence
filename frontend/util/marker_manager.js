@@ -5,11 +5,12 @@ export default class MarkerManager {
     }
 
     updateMarkers(houses) {
-        if (houses) {
-            houses.forEach(house => {
-                this.createMarkerFromHouse(house);
-            });
-        }
+        const housesObj = {};
+        houses.forEach(house => housesObj[house.id] = house);
+
+        houses
+            .filter(house => !this.markers[house.id])
+            .forEach(newHouse => this.createMarkerFromHouse(newHouse))
     }
 
     createMarkerFromHouse(house) {
@@ -21,5 +22,10 @@ export default class MarkerManager {
         });
 
         this.markers[marker.houseId] = marker;
+    }
+
+    removeMarker(marker) { 
+        this.markers[marker.houseId].setMap(null);
+        delete this.markers[marker.houseId]
     }
 }

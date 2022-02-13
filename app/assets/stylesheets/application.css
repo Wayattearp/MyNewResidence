@@ -15,8 +15,9 @@
  */
 
 #map-container{
-    width: 500px;
-    height: 500px;
+    width: 60%;
+    height: 30vw;
+    align-self: center;
 }
 
 .login-signup{
@@ -28,4 +29,9 @@
     border: 1px solid skyblue;
     border-radius: 10px;
     background-color: aliceblue;
+}
+
+.mapItem{
+    display: flex;
+    justify-content: center;
 }

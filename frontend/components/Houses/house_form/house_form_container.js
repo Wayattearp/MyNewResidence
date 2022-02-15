@@ -4,7 +4,7 @@ import { createHouse } from "../../../actions/houses_actions";
 import HouseForm from './house_form';
 
 const mapStateToProps = (state, { location }) => ({
-    let: new URLSearchParams(location.search).get('lat'),
+    lat: new URLSearchParams(location.search).get('lat'),
     lng: new URLSearchParams(location.search).get('lng')
 });
 

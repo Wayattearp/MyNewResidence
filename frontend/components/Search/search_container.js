@@ -6,6 +6,8 @@ import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = state => ({
     houses: asArray(state.entities),
+    minPrice: state.ui.filters.minPrice,
+    maxPrice: state.ui.filters.maxPrice
 });
 
 const mapDispatchToProps = dispatch => ({

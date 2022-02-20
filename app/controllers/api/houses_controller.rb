@@ -2,8 +2,10 @@ class Api::HousesController < ApplicationController
 
     def index
         @houses = bounds ? House.in_bounds(bounds) : House.all
+        if params[:minPrice] && params[:maxPrice]
+          @houses = @houses.where(price: price_range)
+        end
         render :index
-
     end
 
     def show
@@ -39,7 +41,9 @@ class Api::HousesController < ApplicationController
         end
     end
 
-    
+  def price_range 
+    (params[:minPrice]..params[:maxPrice])
+  end
 
   def house_params
     params.require(:house).permit(

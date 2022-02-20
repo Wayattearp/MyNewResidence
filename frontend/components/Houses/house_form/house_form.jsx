@@ -8,10 +8,10 @@ class HouseForm extends React.Component {
         super(props);
         this.coords = { lat: props.lat, lng: props.lng };
         this.state = {
-            address: '48 street',
-            description: 'ui',
-            state: 'NY',
-            city: 'brooklyn',
+            address: '',
+            description: '',
+            state: '',
+            city: '',
             zipcode: 0,
             price: 0,
             beds: 0,
@@ -43,8 +43,6 @@ class HouseForm extends React.Component {
         let isValid = this.handleInputVals();
         if (isValid) {
             const formData = new FormData();
-            // formData.append('house[city_id]', this.state.city_id);
-            // formData.append('house[state_id]', this.state.state_id);
             formData.append('house[description]', this.state.description);
             formData.append('house[address]', this.state.address);
             formData.append('house[state]', this.state.state);
@@ -64,35 +62,21 @@ class HouseForm extends React.Component {
     }
 
     handleInputVals() {
-        if (!isNaN(parseInt(this.state.city))) {
-            window.alert("City name should be String");
+        if (this.state.address == ''){
+            window.alert("Please check address box")
+        }
+        if (!isNaN(parseInt(this.state.city)) || this.state.city == '') {
+            window.alert("Please check city box");
             return false;
         }
-        if (!isNaN(parseInt(this.state.state))) {
-            window.alert("State name should be String");
+        if (!isNaN(parseInt(this.state.state)) || this.state.state == '') {
+            window.alert("Please check state box");
             return false;
         }
         if (isNaN(parseInt(this.state.zipcode)) || this.state.zipcode.length != 5) {
-            window.alert("Zipcode value should be 5 digits Integer");
+            window.alert("Please enter a valid zipcode");
             return false;
         }
-        if (isNaN(parseInt(this.state.price))) {
-            window.alert("Price value should be Integer");
-            return false;
-        }
-        if (isNaN(parseInt(this.state.baths))) {
-            window.alert("Bathrooms value should be Integer");
-            return false;
-        }
-        if (isNaN(parseInt(this.state.beds))) {
-            window.alert("Bedrooms value should be Integer");
-            return false;
-        }
-        if (isNaN(parseInt(this.state.sqft))) {
-            window.alert("Sqft value should be Integer");
-            return false;
-        }
-
         return true;
     };
 
@@ -106,27 +90,13 @@ class HouseForm extends React.Component {
                     <h3 className='new-house-title'> Create Rental</h3>
 
                     <form onSubmit={this.handleSubmit}>
-                        <label className='new-house-description'> Description </label>
-                        <input
-                            type="text"
-                            value={description}
-                            onChange={this.update('description')}
-                            className='house-field'
-                        />
                         <label className='new-house-address'> Address </label>
                         <input
                             type="text"
                             value={address}
                             onChange={this.update('address')}
                             className='house-field'
-                        />
-                        <label className='new-house-state'> State </label>
-                        <select
-                            onChange={this.update('state')}
-                            className='house-field'>
-                            <option value="NY">NY</option>
-                            <option value="NJ">NJ</option>
-                        </select>
+                        /> 
                         <label className='new-house-city'> City </label>
                         <input
                             type="text"
@@ -134,6 +104,14 @@ class HouseForm extends React.Component {
                             onChange={this.update('city')}
                             className='house-field'
                         />
+                        <label className='new-house-state'> State </label>
+                        <input
+                            type="text"
+                            value={state}
+                            onChange={this.update('state')}
+                            className='house-field'
+                        />
+                       
                         <label className='new-house-zipcode'> Zipcode </label>
                         <input
                             type="number"
@@ -143,21 +121,21 @@ class HouseForm extends React.Component {
                         />
                         <label className='new-house-price'> Price </label>
                         <input
-                            type="text"
+                            type="number"
                             value={price}
                             onChange={this.update('price')}
                             className='house-field'
                         />
                         <label className='new-house-beds'> Beds </label>
                         <input
-                            type="text"
+                            type="number"
                             value={beds}
                             onChange={this.update('beds')}
                             className='house-field'
                         />
                         <label className='new-house-baths'> Baths </label>
                         <input
-                            type="text"
+                            type="number"
                             value={baths}
                             onChange={this.update('baths')}
                             className='house-field'
@@ -169,20 +147,28 @@ class HouseForm extends React.Component {
                             onChange={this.update('sqft')}
                             className='house-field'
                         />
-                        <label className='new-house-is_rent'> Currently available for rent </label>
+                        <label className='new-house-is_rent'> Available for rent </label>
                         <select
+                            value={is_rent}
                             onChange={this.update('is_rent')}
                             className='house-field'>
-                            <option value="NY">Available</option>
+                            <option value="NY">Yes</option>
                             <option value="NJ">N/A</option>
                         </select>
                         <label className='new-house-yr_built'> Year built </label>
                         <input
-                            type="text"
+                            type="number"
                             value={yr_built}
                             onChange={this.update('yr_built')}
                             className='house-field'
                         />
+                        <label className='new-house-description'> Description </label>
+                            <input
+                                type="text"
+                                value={description}
+                                onChange={this.update('description')}
+                                className='house-field'
+                            />
 
                         <label className='house-lat'>Latitude</label>
                         <input

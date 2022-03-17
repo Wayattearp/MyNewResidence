@@ -1,8 +1,13 @@
 import React from "react";
 
-const handleChange = (filter, updateFilter) => e => (
-    updateFilter(filter, parseInt(e.currentTarget.value))
-);
+const handleChange = (filter, updateFilter) => e => {
+    if (e.currentTarget.value === ''){
+        e.currentTarget.value = 0;
+    }
+    return updateFilter(filter, parseInt(e.currentTarget.value))
+ 
+}
+
 
 const FilterForm = ({ minPrice, maxPrice, updateFilter }) => (
     <div>

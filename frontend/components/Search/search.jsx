@@ -3,7 +3,8 @@ import HouseMap from '../Houses/house_map'
 import HouseIndex from '../Houses/house_index_container'
 import FilterForm from './filter_form';
 
-const Search = ({houses, updateFilter, minPrice, maxPrice}) => ( 
+
+const Search = ({houses, updateFilter, minPrice, maxPrice}) => (  
     <div>
         <FilterForm
             minPrice={minPrice}
@@ -13,6 +14,7 @@ const Search = ({houses, updateFilter, minPrice, maxPrice}) => (
         <HouseMap
          updateFilter={updateFilter}
          houses={houses}
+         singleHouse={false}
         />
         <HouseIndex houses={houses} />
     </div>

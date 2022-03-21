@@ -24,7 +24,6 @@ class HouseForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.navigateToSearch = this.navigateToSearch.bind(this);
         this.handleInputVals = this.handleInputVals.bind(this);
-        console.log(this.props)
     }
 
     update(property) {

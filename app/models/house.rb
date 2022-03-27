@@ -26,6 +26,8 @@ class House < ApplicationRecord
   belongs_to :city
   belongs_to :state
 
+  has_one_attached :photo
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
     .where("lat > ?", bounds[:southWest][:lat])

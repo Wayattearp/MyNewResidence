@@ -11,6 +11,7 @@ const Search = ({houses, updateFilter, minPrice, maxPrice}) => (
             maxPrice={maxPrice}
             updateFilter={updateFilter}
         />
+        Click on the map to list a new house
         <HouseMap
          updateFilter={updateFilter}
          houses={houses}

@@ -19,8 +19,11 @@ class HouseForm extends React.Component {
             sqft: 0,
             is_rent: true,
             yr_built: 2022,
-
+            photoFile: null,
+            photoUrl: null
         };
+
+        this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.navigateToSearch = this.navigateToSearch.bind(this);
         this.handleInputVals = this.handleInputVals.bind(this);
@@ -55,6 +58,9 @@ class HouseForm extends React.Component {
             formData.append('house[yr_built]', this.state.yr_built);
             formData.append('house[lat]', this.coords['lat']);
             formData.append('house[lng]', this.coords['lng']);
+            if (this.state.photoFile) {
+                formData.append('house[photo]', this.state.photoFile);
+            }
 
             this.props.createHouse(formData)
         }
@@ -78,6 +84,17 @@ class HouseForm extends React.Component {
         }
         return true;
     };
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ photoFile: file, photoUrl: fileReader.result });
+        };
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
+    }
 
     render() {
         const { lat, lng } = this.coords;
@@ -184,6 +201,10 @@ class HouseForm extends React.Component {
                             value={lng}
                             className='house-field'
                         />
+
+                        <h3 className="button-holder">Add a Picture</h3>
+                        <input type="file" className="new-bench-button"
+                            onChange={this.handleFile.bind(this)} />
 
                         <div className="button-holder">
                             <input

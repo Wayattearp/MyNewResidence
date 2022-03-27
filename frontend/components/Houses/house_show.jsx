@@ -16,6 +16,7 @@ class HouseShow extends React.Component {
         return(
             <div>
                 <h1>House Show</h1>
+                <img src={house.photoUrl} />
                 <HouseMap
                 houses={houses}
                 singleHouse={true}

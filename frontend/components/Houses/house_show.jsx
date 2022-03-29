@@ -28,15 +28,5 @@ class HouseShow extends React.Component {
     }
 }
 
-// const HouseShow = ({ house }) => {
-//         // let house = this.props.fetchHouse(this.props.match.params.id)
-//         return(
-//             <div>
-//                 {/* <HouseMap
-//                     house={house}
-//                 /> */}
-//             </div>
-//         )
-// }
 
 export default HouseShow

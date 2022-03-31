@@ -7,6 +7,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HouseFormContainer from '../components/Houses/house_form/house_form_container';
 import SearchContainer from '../components/Search/search_container';
 import HouseShowContainer from './Houses/house_show_container';
+import Splash from "./Splash/splash";
+
 const App = () => (
     <div>
         <header>
@@ -18,9 +20,10 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route exact path="/" component={SearchContainer} />
+            <Route exact path="/sell" component={SearchContainer} />
             <ProtectedRoute exact path="/houses/new" component={HouseFormContainer} />
             <ProtectedRoute exact path="/houses/:id" component={HouseShowContainer} />
+            <Route exact path="/" component={Splash} />
         </Switch>
     </div>
 );

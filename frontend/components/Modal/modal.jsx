@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import SessionForm from "../Session_form/session_form";
+import GreetingContainer from "../Greeting/greeting_container";
 import { closeModal } from "../../actions/modal_actions";
 import { useSelector } from "react-redux";
 
@@ -15,10 +15,10 @@ const Modal = () => {
   let component;
   switch (ui.modal) {
     case "login":
-      component = <SessionForm />;
+      component = <GreetingContainer />;
       break;
     case "signup":
-      component = <SessionForm />;
+      component = <GreetingContainer />;
       break;
     default:
       null;

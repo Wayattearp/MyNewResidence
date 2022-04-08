@@ -8,15 +8,10 @@ import HouseFormContainer from '../components/Houses/house_form/house_form_conta
 import SearchContainer from '../components/Search/search_container';
 import HouseShowContainer from './Houses/house_show_container';
 import Splash from "./Splash/splash";
-
+import HeaderNav from "./Navs/header_nav";
 const App = () => (
     <div>
-        <header>
-            <Link to="/" className="header-link">
-                <h1>Добро пожаловать</h1>
-            </Link>
-        <GreetingContainer />
-        </header>
+        <HeaderNav />
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />

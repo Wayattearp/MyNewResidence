@@ -1,4 +1,6 @@
 import React from 'react';
+import { openModal, closeModal } from "../../actions/modal_actions";
+import { useSelector } from "react-redux";
 
 class SessionForm extends React.Component {
   constructor(props) {

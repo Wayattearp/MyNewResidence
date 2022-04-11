@@ -11,6 +11,7 @@
 
 .modal-child-login,
 .modal-child-signup {
+  transition: 0.248s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,8 +41,9 @@
   padding: 30px;
 
   .session-form-option {
+    cursor: pointer;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     height: 40px;
     font-size: 16px;
     font-weight: 300;
@@ -65,6 +67,7 @@
 }
 
 .close-x {
+  cursor:pointer;
   position: absolute;
   font-size: medium;
   top: 10px;
@@ -99,7 +102,7 @@
   }
 }
 
-#session-input-email,
+#session-input-username,
 #session-input-pw {
   width: 99%;
   border: 0.7px solid rgb(216, 213, 213);
@@ -112,6 +115,7 @@
 }
 
 .session-btn {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,5 +131,6 @@
   }
   #demo-btn {
     background-color: black;
+    color: white;
   }
 }

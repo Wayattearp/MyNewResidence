@@ -89,3 +89,6 @@ zipcodes = [
   house.description = descriptions.sample
 house.save!
 end
+
+demoUser = User.create!(username: "DemoUser", password: "password148");
+demoUser.save!

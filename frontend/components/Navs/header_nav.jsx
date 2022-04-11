@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LoginNav from "./login_nav"
+import SignInNav from "./sign_in_nav_container"
 const HeaderNav = () => {
       return (
         <div className="NavHeader">
@@ -10,7 +10,7 @@ const HeaderNav = () => {
                 <Link to="/sell"> Sell </Link>
             </div>
               <div className="NavHeader-right">
-                <LoginNav />
+                <SignInNav />
             </div>
         </div>
   );

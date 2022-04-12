@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 require "faker"
 
 User.delete_all
@@ -87,6 +88,11 @@ zipcodes = [
   house.sqft = rand(400..5000) / 10 * 10
   house.is_rent = true
   house.description = descriptions.sample
+
+  image = URI.open("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg")
+
+  house.photo.attach(io: image, filename: "photo_test.jpeg")
+
 house.save!
 end
 

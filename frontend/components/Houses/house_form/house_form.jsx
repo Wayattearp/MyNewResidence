@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 
@@ -37,7 +38,7 @@ class HouseForm extends React.Component {
 
 
     navigateToSearch() {
-        this.props.history.push('/');
+        this.props.history.push('/sell');
     }
 
     handleSubmit(e) {
@@ -62,12 +63,14 @@ class HouseForm extends React.Component {
                 formData.append('house[photo]', this.state.photoFile);
             }
 
-            this.props.createHouse(formData)
+            if (this.props.createHouse(formData)) {
+                this.navigateToSearch();
+            }
         }
     }
 
     handleInputVals() {
-        if (this.state.address == ''){
+        if (this.state.address == '') {
             window.alert("Please check address box")
         }
         if (!isNaN(parseInt(this.state.city)) || this.state.city == '') {
@@ -112,7 +115,7 @@ class HouseForm extends React.Component {
                             value={address}
                             onChange={this.update('address')}
                             className='house-field'
-                        /> 
+                        />
                         <label className='new-house-city'> City </label>
                         <input
                             type="text"
@@ -127,7 +130,7 @@ class HouseForm extends React.Component {
                             onChange={this.update('state')}
                             className='house-field'
                         />
-                       
+
                         <label className='new-house-zipcode'> Zipcode </label>
                         <input
                             type="number"
@@ -179,12 +182,12 @@ class HouseForm extends React.Component {
                             className='house-field'
                         />
                         <label className='new-house-description'> Description </label>
-                            <input
-                                type="text"
-                                value={description}
-                                onChange={this.update('description')}
-                                className='house-field'
-                            />
+                        <input
+                            type="text"
+                            value={description}
+                            onChange={this.update('description')}
+                            className='house-field'
+                        />
 
                         <label className='house-lat'>Latitude</label>
                         <input

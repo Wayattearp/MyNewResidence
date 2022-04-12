@@ -28,7 +28,6 @@ const SessionForm = (props) => {
   };
 
   const pwErr = () => {
-    debugger
     for (let i = 0; i < errors.length; i++) {
       if (errors[i].includes("short")) {
         return "Password must be at least 6 characters";

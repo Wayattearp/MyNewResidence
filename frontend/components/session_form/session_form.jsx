@@ -38,20 +38,12 @@ const SessionForm = (props) => {
     e.preventDefault();
     if (formType === "login") {
       dispatch(login(user)).then(function () {
-        if (errors.length > 0) {
-          errors << "something wrong!";
-        } else {
           dispatch(closeModal());
-        }
       });
       dispatch(clearErrors());
     } else if (formType === "signup") {
       dispatch(signup(user)).then(function () {
-        if (errors.length > 0) {
-          errors << "something wrong!";
-        } else {
           dispatch(closeModal());
-        }
       });
 
       dispatch(clearErrors());

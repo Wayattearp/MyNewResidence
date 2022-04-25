@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { login, signup, clearErrors } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
+import { connect } from "react-redux";
 
 const SessionForm = (props) => {
-  const errors = useSelector((state) => state.errors);
   const [user, setUser] = useState({ username: "", password: "" });
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -15,29 +15,6 @@ const SessionForm = (props) => {
   if (currentUser) {
     dispatch(closeModal());
   }
-  const UsernameErr = () => {
-    for (let i = 0; i < errors.length; i++) {
-      if (errors[i].includes("blank")) {
-        return "Username can't be empty";
-      } else if (errors[i].includes("Invalid login credentials")) {
-        return "Invalid Username";
-      } else if (errors[i].includes("already")) {
-        return "Username has already been taken";
-      }
-    }
-  };
-
-  const pwErr = () => {
-    for (let i = 0; i < errors.length; i++) {
-      if (errors[i].includes("short")) {
-        return "Password must be at least 6 characters";
-      } else if (errors[i].includes("Invalid password")) {
-        return "Invalid Password";
-      } else if (errors[i].includes("Invalid login credentials")) {
-        return "Invalid Password";
-      }
-    }
-  };
 
   const handleUsername = () => {
     usernameRef.current.focus();
@@ -141,7 +118,6 @@ const SessionForm = (props) => {
             ref={usernameRef}
             autoComplete="off"
           />
-          <p>{UsernameErr()}</p>
         </div>
 
         <div className="input-section">
@@ -155,7 +131,7 @@ const SessionForm = (props) => {
             ref={passwordRef}
             autoComplete="off"
           />
-          <p>{pwErr()}</p>
+          <p>{props.errors}</p>
         </div>
 
         <div className="session-btn">
@@ -170,4 +146,10 @@ const SessionForm = (props) => {
   );
 };
 
-export default SessionForm;
+const mapStateToProps = ({ errors }) => {
+  return {
+    errors: errors.session
+  };
+};
+
+export default connect(mapStateToProps)(SessionForm);

@@ -2,8 +2,7 @@ import React from 'react';
 import HouseIndexItem from './house_index_item';
 
 const HouseIndex = ({ houses }) => (
-    <div>
-        <h1>Houses: </h1>
+    <div className="property-index-container">
         {houses.map(house => (
             <HouseIndexItem
                 house={house}

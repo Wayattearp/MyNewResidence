@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+ import { openModal } from "../../actions/modal_actions";
+import { useDispatch } from "react-redux";
 
 const Splash = (props) => {
+    let dispatch = useDispatch();
+    if (!props.loggedIn){
+        dispatch(openModal("login"));
+    }
     return (
         <div className=" main-search-wrapper">
             <div className="main-content-slogan-container">
@@ -47,4 +53,9 @@ const Splash = (props) => {
     );
 };
 
-export default Splash;
+const mapStateToProps = state => (
+    { loggedIn: Boolean(state.session.id) }
+);
+
+
+export default connect(mapStateToProps)(Splash);

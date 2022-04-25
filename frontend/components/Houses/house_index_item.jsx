@@ -14,20 +14,26 @@ class HouseIndexItem extends React.Component {
     }
 
 
-    componentDidMount() {
-
-    }
-
-
     render() {
+
         return (
             <div className="houseIndexItem"
-                >
-                    <div
+            >
+                <div
                     onClick={this.handleClick}>
+                    <div className="property-thumbnail-container">
+                        <div className="property-thumbnail">
+                            <img src={this.props.house.photoUrl} />
 
-                     house_id:{this.props.house.id}
+                            <div className="property-thumbnail-info">
+                                <h2>${`${this.props.house.price}`} /mo</h2>
+                                <p>{`${this.props.house.address}, ${this.props.house.city}, ${this.props.house.state} ${this.props.house.zipcode}`}</p>
+                                {this.props.house.is_rent ? "For sale" : ""}
+                            </div>
+
+                        </div>
                     </div>
+                </div>
 
             </div>
         );

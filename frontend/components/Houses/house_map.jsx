@@ -18,7 +18,7 @@ class HouseMap extends React.Component {
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
         if (this.props.singleHouse) {
             // this.props.fetchHouse(this.props.houseId)
-            console.log(this.props.match.url)
+            // console.log(this.props.match.url)
             //center on target marker 
             // const targetHouseKey = Object.keys(this.props.houses)[0];
             // const targetHouse = this.props.houses[targetHouseKey];

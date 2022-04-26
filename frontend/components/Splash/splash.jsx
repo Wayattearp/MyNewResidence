@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
  import { openModal } from "../../actions/modal_actions";
@@ -49,6 +50,7 @@ const Splash = (props) => {
                     </div>
                 </Link>
             </div>
+            <Footer />
         </div>
     );
 };

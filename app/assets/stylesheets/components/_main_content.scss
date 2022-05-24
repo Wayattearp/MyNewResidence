@@ -48,6 +48,7 @@
       .options-btn {
         background-color: rgb(0, 106, 255);
         color: white;
+        border: 1px solid #2a78ab;
       }
     }
     > h4 {
@@ -73,9 +74,9 @@
   background-color: white;
   width: 35%;
   padding: 10px;
-  border: 1px solid rgb(0, 106, 255);
+  border: 1px solid #090ab3;
   border-radius: 3px;
-  color: rgb(0, 106, 255);
+  color: #1228f5;
   font-size: medium;
   transition: transform 280ms;
 }

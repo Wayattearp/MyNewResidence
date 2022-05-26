@@ -2,19 +2,23 @@ import React from "react";
 import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
- import { openModal } from "../../actions/modal_actions";
+import { openModal } from "../../actions/modal_actions";
 import { useDispatch } from "react-redux";
+import SearchBar from "../Search/search_bar";
 
 const Splash = (props) => {
     let dispatch = useDispatch();
-    if (!props.loggedIn){
+    if (!props.loggedIn) {
         dispatch(openModal("login"));
     }
     return (
         <div className=" main-search-wrapper">
-            <div className="main-content-slogan-container">
-                <span> Whether you’re buying, selling or renting,</span>
-                <span> we can help you move forward.</span>
+            <img src={window.searchBgUrl} className="search-background" />
+            <div className="main-search">
+                <div className="search-slogan"> Change starts here </div>
+                <div className="search-bar-container">
+                    <SearchBar />
+                </div>
             </div>
 
             <div className="options-wrapper">

@@ -1,6 +1,7 @@
 .main-search {
   width: 100vw;
-  height: 500px;
+  height: 48vh;
+  min-height: 350px;
   background-image: image-url("searchBg.jpg");
   background-size: cover;
   background-position: center;
@@ -11,7 +12,7 @@
 .search-background {
   display: block;
   visibility: hidden;
-  height: auto;
+  height: 55vh;
   width: 100vw;
   position: absolute;
   z-index: -2;
@@ -42,9 +43,6 @@
 .search-bar-form {
   display: flex;
   width: 40%;
-  &:hover {
-    border: 1px solid #1228f5;
-  }
 }
 
 #search-bar,
@@ -72,7 +70,6 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   width: 50px;
-  padding: 0;
   border-left: none;
   color: #1228f5;
 }

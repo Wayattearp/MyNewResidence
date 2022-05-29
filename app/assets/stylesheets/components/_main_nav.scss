@@ -48,8 +48,10 @@
 
 .fa-user-circle{
   position: relative;
-  font-size: large;
+  font-size: xx-large;
   color: gray;
+  margin: 20px;
+  min-width: 72px;
 }
 
 #user-dropdown.show {

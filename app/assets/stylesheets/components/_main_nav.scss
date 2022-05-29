@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 90px;
+  height: 75px;
   border-bottom: solid 1px lightgray;
 }
 
@@ -27,6 +27,7 @@
   text-decoration: none;
   color: rgb(31, 31, 31);
   margin: 20px;
+  cursor: pointer;
 }
 
 .logo-container {
@@ -35,9 +36,47 @@
 }
 
 .login-btn {
+  transition: 0.4s;
   padding: 15px;
   &:active,
   &:hover {
-    border: 3px solid rgb(123, 160, 213);
+    transition: 0.2s;
+    color: rgb(52, 94, 249);
+    text-shadow: 1px rgb(75, 139, 230);
   }
+}
+
+.fa-user-circle{
+  position: relative;
+  font-size: large;
+  color: gray;
+}
+
+#user-dropdown.show {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 48px;
+  right: 5%;
+  width: 150px;
+  height: 50px;
+  background-color: aliceblue;
+}
+
+#user-dropdown>a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 0px 0 5px 0;
+  padding: 15px;
+  box-shadow: 0px 5px 10px rgba(171, 170, 170, 0.753);
+  border-radius: 5px;
+}
+
+#user-dropdown :nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+#user-dropdown a:hover {
+  background-color: rgba(210, 231, 250, 0.818);
 }

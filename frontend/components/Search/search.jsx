@@ -22,6 +22,7 @@ const Search = ({ houses, updateFilter, minPrice, maxPrice }) => (
             <div className="listing-page-right">
                 <h1>Listings</h1>
                 <HouseIndex houses={houses} />
+
             </div>
         </div>
     </div>

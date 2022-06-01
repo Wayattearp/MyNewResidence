@@ -7,10 +7,10 @@ const Footer = (props) => {
 
                 <div className="icons">
 
+                    <a href="https://github.com/Wayattearp">
+                        <i className="fab fa-github" id="github"></i>
+                    </a>
                 </div>
-                <a href="https://github.com/Wayattearp">
-                    <i className="fab fa-github"></i>
-                </a>
             </div>
 
             <img src={window.footerUrl} draggable="false" className="footer-img" />

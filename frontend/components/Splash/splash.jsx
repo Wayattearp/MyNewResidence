@@ -15,7 +15,7 @@ const Splash = (props) => {
         <div className=" main-search-wrapper">
             <img src={window.searchBgUrl} className="search-background" />
             <div className="main-search">
-                <div className="search-slogan"> Change starts here </div>
+                <div className="search-slogan"> Open a new page of your life </div>
                 <div className="search-bar-container">
                     <SearchBar />
                 </div>

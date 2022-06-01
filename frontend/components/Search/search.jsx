@@ -1,12 +1,12 @@
 import React from 'react';
 import HouseMap from '../Houses/house_map'
 import HouseIndex from '../Houses/house_index_container'
-import FilterForm from './filter_form';
+import SearchNav from './search_nav';
 
 
 const Search = ({ houses, updateFilter, minPrice, maxPrice }) => (
     <div>
-        <FilterForm
+        <SearchNav
             minPrice={minPrice}
             maxPrice={maxPrice}
             updateFilter={updateFilter}

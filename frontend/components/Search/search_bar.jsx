@@ -10,7 +10,6 @@ const SearchBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleAreaSearch = (e) => {
-    // debugger
     //setQuery
     console.log(e.currentTarget)
     console.log(e.currentTarget.value)

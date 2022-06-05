@@ -1,16 +1,23 @@
 class Api::HousesController < ApplicationController
 
-    def index
-        @houses = bounds ? House.in_bounds(bounds) : House.all
-        if params[:minPrice] && params[:maxPrice]
-          @houses = @houses.where(price: price_range)
-        end
-        render :index
+  def index
+    if params[:bounds]
+      if params[:query]
+        @houses = House.with_query(params).includes(:city, :state).with_attached_photo
+      else
+        @houses = House.with_attached_photo.in_bounds(params).includes(:city, :state)
+      end
+    else
+      @houses = House.all.with_attached_photo.includes(:city, :state)
     end
 
-    def show
-         @house = House.find(params[:id])
-    end
+    render :index
+  end
+
+  def show
+    @house = House.with_attached_photo.includes(:city, :state).find(params[:id])
+    render "api/houses/show"
+  end
     
     def create
         city = "%#{params[:house][:city].strip.split(//).join("%")}%"
@@ -31,6 +38,8 @@ class Api::HousesController < ApplicationController
         params[:house][:city_id] = city_id
         params[:house][:state_id] = state_id
         @house = House.new(house_params)
+        @house.city = City.find_by(id: city_id)
+        @house.state = State.find_by(id: state_id)
 
         if @house.save
           render :show
@@ -39,10 +48,6 @@ class Api::HousesController < ApplicationController
         end
     end
 
-  def price_range 
-    (params[:minPrice]..params[:maxPrice])
-  end
-
   def house_params
     params.require(:house).permit(
       :address, :city_id, :state_id,
@@ -50,10 +55,6 @@ class Api::HousesController < ApplicationController
       :sqft, :is_rent, :lat, :lng,
       :description, :yr_built, :photo,
       photos: [])
-  end
-
-  def bounds
-    params[:bounds]
   end
 
 end

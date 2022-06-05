@@ -4,12 +4,9 @@ import HouseIndex from '../Houses/house_index_container'
 import SearchNav from './search_nav';
 
 
-const Search = ({ houses, updateFilter, minPrice, maxPrice }) => (
+const Search = ({ houses, updateFilter }) => (
     <div>
         <SearchNav
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            updateFilter={updateFilter}
         />
         <div className='listing-page'>
             <div className="listing-page-left">

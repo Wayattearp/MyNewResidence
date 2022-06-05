@@ -6,7 +6,6 @@ export const CLEAR_FILTER = "CLEAR_FILTER";
 
 
 export const changeFilter = (filter, value) => {
-    // debugger
     return {
         type: UPDATE_FILTER,
         filter,

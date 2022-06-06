@@ -1,31 +1,22 @@
-import React from "react";
-import HouseMap from './house_map'
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router";
+import { openModal } from "../../actions/modal_actions";
+import { fetchHouse } from "../../util/house_utils";
+
+const HouseShow = (props) => {
 
 
-class HouseShow extends React.Component {
-    constructor(props){
-        super(props)
-    }
 
-    
-
-    render() {
-        const house = this.props.house;
-        const houseId = this.props.houseId;
-        const houses = [{ [houseId]: house}]
-        return(
-            <div>
-                <h1>House Show</h1>
-                <img src={house.photoUrl} />
-                <HouseMap
-                houses={houses}
-                singleHouse={true}
-                fetchHouse={this.props.fetchHouse}
-                houseId={houseId}
-                />
-            </div>
-        )
-    }
+    const house = props.house;
+    const houseId = props.houseId;
+    return (
+        <div>
+            <h1>House Show</h1>
+            {/* <img src={house.photoUrl} /> */}
+        </div>
+    )
 }
 
 

@@ -60,7 +60,7 @@ const Splash = (props) => {
 };
 
 const mapStateToProps = state => (
-    { loggedIn: Boolean(state.session.id) }
+    { loggedIn: Boolean(state.session.currentUser) }
 );
 
 

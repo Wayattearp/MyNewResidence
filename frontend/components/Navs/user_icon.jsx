@@ -6,7 +6,7 @@ import UserDropDown from "./user_dropdown";
 
 const UserIcon = (props) => {
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.session.id);
+  const currentUser = useSelector((state) => state.session.currentUser);
 
   const noUser = () => (
     <a className="login-btn" onClick={() => dispatch(openModal("login"))}>

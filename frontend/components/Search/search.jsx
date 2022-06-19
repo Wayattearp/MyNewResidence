@@ -1,5 +1,5 @@
 import React from 'react';
-import HouseMap from '../Houses/house_map'
+import HouseMap from '../Map/house_map'
 import HouseIndex from '../Houses/house_index_container'
 import SearchNav from './search_nav';
 

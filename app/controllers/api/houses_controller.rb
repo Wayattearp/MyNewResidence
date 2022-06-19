@@ -3,19 +3,19 @@ class Api::HousesController < ApplicationController
   def index
     if params[:bounds]
       if params[:query]
-        @houses = House.with_query(params).includes(:city, :state).with_attached_photo
+        @houses = House.with_query(params).includes(:city, :state).with_attached_photos
       else
-        @houses = House.with_attached_photo.in_bounds(params).includes(:city, :state)
+        @houses = House.with_attached_photos.in_bounds(params).includes(:city, :state)
       end
     else
-      @houses = House.all.with_attached_photo.includes(:city, :state)
+      @houses = House.all.with_attached_photos.includes(:city, :state)
     end
 
     render :index
   end
 
   def show
-    @house = House.with_attached_photo.includes(:city, :state).find(params[:id])
+    @house = House.with_attached_photos.includes(:city, :state).find(params[:id])
     render "api/houses/show"
   end
     

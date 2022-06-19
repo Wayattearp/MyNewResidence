@@ -26,7 +26,7 @@ class House < ApplicationRecord
   belongs_to :city
   belongs_to :state
 
-  has_one_attached :photo
+  has_many_attached :photos
 
 
   def self.in_bounds(params)

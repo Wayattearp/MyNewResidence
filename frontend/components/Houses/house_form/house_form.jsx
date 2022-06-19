@@ -21,7 +21,8 @@ class HouseForm extends React.Component {
             is_rent: true,
             yr_built: 2022,
             photoFile: null,
-            photoUrl: null
+            photoFiles: null,
+            photoUrls: null
         };
 
         this.handleFile = this.handleFile.bind(this);
@@ -60,8 +61,13 @@ class HouseForm extends React.Component {
             formData.append('house[lat]', this.coords['lat']);
             formData.append('house[lng]', this.coords['lng']);
             if (this.state.photoFile) {
-                formData.append('house[photo]', this.state.photoFile);
+                formData.append('house[photos][]', this.state.photoFile);
             }
+            // if (this.state.photoFiles) {
+            //     for (let i = 0; i < this.state.photoFiles.length; i++) {
+            //         formData.append("house[photos][]", this.state.photoFiles[i]);
+            //     }
+            // }
 
             if (this.props.createHouse(formData)) {
                 this.navigateToSearch();
@@ -92,7 +98,7 @@ class HouseForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: file, photoUrl: fileReader.result });
+            this.setState({ photoFile: file, photoUrls: fileReader.result });
         };
         if (file) {
             fileReader.readAsDataURL(file);

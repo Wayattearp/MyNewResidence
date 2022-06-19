@@ -23,7 +23,7 @@ class HouseIndexItem extends React.Component {
                     onClick={this.handleClick}>
                     <div className="property-thumbnail-container">
                         <div className="property-thumbnail">
-                            <img src={this.props.house.photoUrl} />
+                            <img src={this.props.house.photoUrls} />
 
                             <div className="property-thumbnail-info">
                                 <h2>${`${this.props.house.price}`} /mo</h2>

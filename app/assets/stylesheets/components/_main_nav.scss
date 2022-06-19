@@ -1,9 +1,8 @@
 .NavHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100vw;
-  height: 75px;
+  height: 58px;
   border-bottom: solid 1px lightgray;
 }
 
@@ -23,21 +22,26 @@
 }
 
 .NavHeader a {
-  font-size: 14px;
+  font-size: medium;
   text-decoration: none;
   color: rgb(31, 31, 31);
-  margin: 20px;
+  padding: 8px 40px 8px 8px;
   cursor: pointer;
+    &:hover {
+        transition: 0.2s;
+        color: rgb(52, 94, 249);
+        text-shadow: 1px rgb(75, 139, 230);
+      }
 }
 
 .logo-container {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  
 }
 
 .login-btn {
   transition: 0.4s;
-  padding: 15px;
   &:active,
   &:hover {
     transition: 0.2s;
@@ -50,8 +54,8 @@
   position: relative;
   font-size: xx-large;
   color: gray;
-  margin: 20px;
-  min-width: 72px;
+  min-width: 80.609px;
+  margin:20px;
 }
 
 #user-dropdown.show {
@@ -59,26 +63,36 @@
   display: flex;
   flex-direction: column;
   top: 48px;
-  right: 5%;
+  right: 7%;
   width: 150px;
-  height: 50px;
-  background-color: aliceblue;
+  height: auto;
+  background-color: white;
 }
 
 #user-dropdown>a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   text-align: center;
-  margin: 0px 0 5px 0;
-  padding: 15px;
-  box-shadow: 0px 5px 10px rgba(171, 170, 170, 0.753);
+  padding: 10px;
   border-radius: 5px;
 }
 
-#user-dropdown :nth-last-child(2) {
-  margin-bottom: 0;
-}
 
 #user-dropdown a:hover {
-  background-color: rgba(210, 231, 250, 0.818);
+  background-color: rgba(210, 231, 250, 0.322);
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.bed-and-bath {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  >button {
+    height: 30px;
+  }
 }

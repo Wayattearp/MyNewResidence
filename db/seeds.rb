@@ -20,7 +20,11 @@ queens = City.create!(name: "queens")
 bronx = City.create!(name: "bronx")
 cities = [newyork, brooklyn, queens, bronx]
 descriptions = [
-  "best deal in market"
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 ]
 
 ny = State.create!(name: "NY")
@@ -90,11 +94,13 @@ zipcodes = [
   house.description = descriptions.sample
 
   image = URI.open("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg")
+  bath = URI.open("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg")
 
-  house.photo.attach(io: image, filename: "photo_test.jpeg")
+  house.photos.attach(io: image, filename: "photo_test.jpeg")
+  house.photos.attach(io: bath, filename: "photo_bath.jpeg")
 
 house.save!
 end
 
-demoUser = User.create!(username: "DemoUser", password: "password148");
+demoUser = User.create!(username: "DemoUser", password: "password148")
 demoUser.save!

@@ -23,14 +23,15 @@ export default class MarkerManager {
         const marker = new google.maps.Marker({
             position,
             map: this.map,
-            houseId: house.id
+            houseId: house.id,
+            icon: `${window.markerUrl}`,
         });
 
         marker.addListener('click', () => this.handleClick(house));
         this.markers[marker.houseId] = marker;
     }
 
-    removeMarker(marker) { 
+    removeMarker(marker) {
         this.markers[marker.houseId].setMap(null);
         delete this.markers[marker.houseId]
     }

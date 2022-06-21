@@ -1,13 +1,13 @@
 import { fetchAllHouses } from "./houses_actions";
 
-export const UPDATE_FILTER = 'UPDATE_FILTER';
+export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const CLEAR_ALL_FILTER = "CLEAR_ALL_FILTER";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 
 
 export const changeFilter = (filter, value) => {
     return {
-        type: UPDATE_FILTER,
+        type: CHANGE_FILTER,
         filter,
         value,
     };

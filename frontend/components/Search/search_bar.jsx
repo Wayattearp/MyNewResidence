@@ -6,13 +6,12 @@ import { updateFilter } from "../../actions/filter_actions";
 const SearchBar = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  
 
   const [query, setQuery] = useState("");
 
   const handleAreaSearch = (e) => {
     //setQuery
-    console.log(e.currentTarget)
-    console.log(e.currentTarget.value)
     setQuery(e.currentTarget.value);
   };
 

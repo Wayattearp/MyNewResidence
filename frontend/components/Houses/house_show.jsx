@@ -18,8 +18,6 @@ const HouseShow = (props) => {
         fetchHouse(houseId).then((house) => setHouse(house));
     }, [currentUser]);
 
-    console.log(house)
-
     const address = `${house.address}, ${house.city}, ${house.state} ${house.zipcode}`;
 
 

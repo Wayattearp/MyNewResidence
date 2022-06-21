@@ -7,8 +7,8 @@ const HeaderNav = () => {
   return (
     <div className="NavHeader">
       <div className="NavHeader-left">
-        <Link to="/search"> Buy </Link>
-        <Link to="/search"> Rent </Link>
+        <Link to="/buy"> Buy </Link>
+        <Link to="/rent"> Rent </Link>
         <Link to="/sell"> Sell </Link>
       </div>
       <Link to="/" className="logo-container">

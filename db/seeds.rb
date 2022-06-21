@@ -90,7 +90,7 @@ zipcodes = [
   house.beds = rand(1..6)
   house.baths = rand(1..5)
   house.sqft = rand(400..5000) / 10 * 10
-  house.is_rent = true
+  house.is_rent = false 
   house.description = descriptions.sample
 
   image = URI.open("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg")

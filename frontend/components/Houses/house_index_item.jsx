@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 class HouseIndexItem extends React.Component {
     constructor(props) {
@@ -17,8 +18,14 @@ class HouseIndexItem extends React.Component {
     render() {
 
         return (
-            <div className="houseIndexItem"
-            >
+                <motion.div className="houseIndexItem"
+                initial={{ x: "300px", opacity: 0 }}
+                animate={{
+                    x: 0, opacity: 1, transition: {
+                        duration: 0.2
+                    } }}
+                layout
+                >
                 <div
                     onClick={this.handleClick}>
                     <div className="property-thumbnail-container">
@@ -34,8 +41,8 @@ class HouseIndexItem extends React.Component {
                         </div>
                     </div>
                 </div>
-
-            </div>
+            </motion.div >
+            // </div>
         );
     }
 

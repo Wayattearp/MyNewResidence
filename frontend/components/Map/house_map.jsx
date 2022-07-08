@@ -16,26 +16,8 @@ class HouseMap extends React.Component {
     componentDidMount() {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        if (this.props.singleHouse) {
-            // this.props.fetchHouse(this.props.houseId)
-            // console.log(this.props.match.url)
-            //center on target marker 
-            // const targetHouseKey = Object.keys(this.props.houses)[0];
-            // const targetHouse = this.props.houses[targetHouseKey];
-            // const zoomedLat = targetHouse[this.props.houseId].lat;
-            // const zoomedLng = targetHouse[this.props.houseId].lng
-            this.map.setOptions({ 
-                // draggable: false,
-                zoom: 16,
-                // center: { lat: zoomedLat, lng: zoomedLng}
-
-             });
-            
-            
-        } else {
             this.registerListeners();
             this.MarkerManager.updateMarkers(this.props.houses);
-        }
     }
     
     componentDidUpdate() {

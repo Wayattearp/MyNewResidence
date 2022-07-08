@@ -1,0 +1,247 @@
+@import "../main/fonts";
+.sell-page{
+  background-color: #f3fafe;
+}
+
+.main-sell {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: image_url("sellBg1.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.sell-background {
+  display: block;
+  visibility: hidden;
+  height: auto;
+  width: 100vw;
+  position: absolute;
+  z-index: -2;
+}
+
+.sell-slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  // width: fit-content;
+  > h1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 50px;
+    margin: 20px;
+    text-shadow: -2px 1px 0 white, 2px 1px 0 white, 2px -1px 0 white,
+      -2px -1px 0 white;
+  }
+  > h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px;
+    text-shadow: -1px 1px 0 white, 1px 1px 0 white, 1px -1px 0 white,
+      -1px -1px 0 white;
+  }
+  top: 20%;
+  color: black;
+  font-weight: bolder;
+  position: relative;
+}
+
+@keyframes transitioningBackground {
+  0% {
+    background-position: 1% 0%;
+  }
+
+  50% {
+    background-position: 99% 100%;
+  }
+
+  100% {
+    background-position: 1% 0%;
+  }
+}
+
+.add-house {
+  animation: transitioningBackground 10s ease infinite;
+  margin: 20px;
+  padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: #006aff;
+  box-shadow: 0px 4px 12px #d0c9c9;
+  transition: 1s;
+  &:hover {
+    box-shadow: -8px 10px 8px #d0c9c9;
+    transition: 0.2s;
+  }
+}
+.logged-in {
+  background-color: #ffd235;
+  &:hover {
+    // box-shadow: 4px -4px 12px #ffdc69;
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+}
+
+.dropzone-container {
+  margin: 0 20px;
+}
+.house-sell-form-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.dropzone-container {
+  height: 100vh;
+}
+
+.house-sell-input-container {
+  margin: 0 20px;
+  > form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    input[type="text"] {
+      width: 60%;
+      border: 0.7px solid rgb(216, 213, 213);;
+      border-radius: 3px;
+      background-color: rgba(246, 246, 246, 0.948);
+      padding: 13px 0px 13px 10px;
+      &:hover {
+        border: 1px solid #006aff;
+      }
+      margin-bottom: 20px;
+    }
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: medium;
+      margin: 10px;
+      > p {
+        width: 20%;
+      }
+    }
+    #sell-form-input {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 20% 70%;
+    }
+    textarea {
+      width: 70%;
+      height: 150px;
+      border: 0.7px solid rgb(216, 213, 213);
+      border-radius: 3px;
+      background-color: rgba(246, 246, 246, 0.948);
+      margin-bottom: 20px;
+      padding: 20px;
+      font-size: medium;
+    }
+    .city-state-input {
+      display: grid;
+      grid-template-columns: 42% 30%;
+    }
+    .bd-ba-input {
+      display: grid;
+      grid-template-columns: 23% 23% 23%;
+    }
+  }
+}
+
+.dropzone-container {
+  > h1 {
+    text-align: center;
+    line-height: 200px;
+    color: #006aff;
+  }
+}
+
+.dropzone {
+  :hover {
+    text-shadow: 0 0 20px #009dff;
+  }
+}
+
+.geo-coding-container {
+  border: 2px solid rgb(216, 213, 213);
+  background-color: rgba(246, 246, 246, 0.948);
+  border-radius: 5px;
+  margin: 20px 0;
+  width: 75%;
+  > h1 {
+    margin: 20px;
+    font-size: medium;
+    display: flex;
+  }
+}
+
+.rent-sell-container {
+  display: flex;
+  > div {
+    padding: 0 3%;
+  }
+  input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  label {
+    display: flex;
+    padding: 10px 30px;
+    border: 2px solid rgba(246, 246, 246, 0.948);
+    border-radius: 5px;
+    width: 60px;
+    text-align: center;
+    :hover {
+      background-color: rgb(187, 231, 255);
+    }
+  }
+  input[type="radio"]:checked + label {
+    background-color: rgb(187, 231, 255);
+    border-color: #006aff;
+  }
+}
+
+.lat-lng-container {
+  display: grid;
+  grid-template-columns: 40% 40%;
+}
+
+#isRent-text {
+  text-align: center;
+  width: 100%;
+  margin: 10px;
+}
+
+#create-house-btn {
+  width: 60%;
+  border: 1px solid rgb(216, 213, 213);;
+  border-radius: 3px;
+  background-color: #006aff;
+  font-size: medium;
+  padding: 13px 0px 13px 10px;
+  &:hover {
+    border: 1px solid #006aff;
+    box-shadow: 0.5px 0.5px 5px 1px #009dff;
+  }
+}
+
+#geocoding-map-container {
+  width: 100%;
+  height: 300px;
+}
+
+#pin {
+  width: auto;
+  height: inherit;
+}
+
+.sell-background {
+  width: 100vw;
+  height: 100vh;
+}

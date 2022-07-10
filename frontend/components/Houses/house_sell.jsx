@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { openModal } from "../../actions/modal_actions";
-import Modal from "../Modal/modal";
 
 const HouseSell = (props) => {
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -21,7 +20,7 @@ const HouseSell = (props) => {
           {currentUser ? (
             <button
               className="add-house logged-in"
-              onClick={() => history.push("/sell")}>
+              onClick={() => history.push("/sell/form")}>
               Upload your house🏡
             </button>
           ) : (

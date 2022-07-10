@@ -92,12 +92,13 @@
   margin: 0 20px;
 }
 .house-sell-form-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .dropzone-container {
   height: 100vh;
+    width: 48%;
 }
 
 .house-sell-input-container {
@@ -106,9 +107,12 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
+        align-content: center;
+          justify-content: center;
+          align-items: flex-start;
     input[type="text"] {
       width: 60%;
-      border: 0.7px solid rgb(216, 213, 213);;
+      border: 1px solid rgb(216, 213, 213);;
       border-radius: 3px;
       background-color: rgba(246, 246, 246, 0.948);
       padding: 13px 0px 13px 10px;
@@ -129,8 +133,7 @@
     }
     #sell-form-input {
       width: 100%;
-      display: grid;
-      grid-template-columns: 20% 70%;
+      display: flex;
     }
     textarea {
       width: 70%;
@@ -143,12 +146,10 @@
       font-size: medium;
     }
     .city-state-input {
-      display: grid;
-      grid-template-columns: 42% 30%;
+      display: flex;
     }
     .bd-ba-input {
-      display: grid;
-      grid-template-columns: 23% 23% 23%;
+      display: flex;
     }
   }
 }
@@ -167,16 +168,26 @@
   }
 }
 
+.dropdown-icon-area{
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
 .geo-coding-container {
   border: 2px solid rgb(216, 213, 213);
   background-color: rgba(246, 246, 246, 0.948);
   border-radius: 5px;
   margin: 20px 0;
-  width: 75%;
+  width: 100%;
   > h1 {
     margin: 20px;
+    justify-content: center;
     font-size: medium;
     display: flex;
+    text-align: center;
   }
 }
 
@@ -208,8 +219,8 @@
 }
 
 .lat-lng-container {
-  display: grid;
-  grid-template-columns: 40% 40%;
+  display: flex;
+  justify-content: space-around;
 }
 
 #isRent-text {
@@ -222,9 +233,11 @@
   width: 60%;
   border: 1px solid rgb(216, 213, 213);;
   border-radius: 3px;
-  background-color: #006aff;
+  background-color: #fdcf33;
   font-size: medium;
   padding: 13px 0px 13px 10px;
+      text-align: center;
+        align-self: center;
   &:hover {
     border: 1px solid #006aff;
     box-shadow: 0.5px 0.5px 5px 1px #009dff;
@@ -233,7 +246,7 @@
 
 #geocoding-map-container {
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 
 #pin {

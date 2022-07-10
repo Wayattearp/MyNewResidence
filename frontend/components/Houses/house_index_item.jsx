@@ -18,14 +18,17 @@ class HouseIndexItem extends React.Component {
     render() {
 
         return (
-                <motion.div className="houseIndexItem"
-                initial={{ x: "300px", opacity: 0 }}
-                animate={{
-                    x: 0, opacity: 1, transition: {
-                        duration: 0.2
-                    } }}
+            <motion.div className="houseIndexItem"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ x:0,
+                    opacity: 1, scale: 1, transition: {
+                        duration: 0.4,
+                        x: "300px",
+                    }
+                }}
+                exit={{ opacity: 0 }}
                 layout
-                >
+            >
                 <div
                     onClick={this.handleClick}>
                     <div className="property-thumbnail-container">

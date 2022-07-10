@@ -9,6 +9,7 @@ import HouseSell from './Houses/house_sell';
 import HouseShowContainer from './Houses/house_show_container';
 import Splash from "./Splash/splash";
 import HeaderNav from "./Navs/header_nav";
+import HouseSellForm from './Houses/house_sell_form';
 
 const App = () => (
     <div>
@@ -20,6 +21,7 @@ const App = () => (
             <ProtectedRoute exact path="/buy" component={SearchContainer} />
             <ProtectedRoute exact path="/rent" component={SearchContainer} />
             <ProtectedRoute exact path="/sell" component={HouseSell} />
+            <ProtectedRoute exact path="/sell/form" component={HouseSellForm} />
             <ProtectedRoute exact path="/houses/new" component={HouseFormContainer} />
             <ProtectedRoute exact path="/houses/:id" component={HouseShowContainer} />
             <Route exact path="/" component={Splash} />

@@ -2,10 +2,15 @@ import React from 'react';
 import HouseMap from '../Map/house_map'
 import HouseIndex from '../Houses/house_index_container'
 import SearchNav from './search_nav';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-const Search = ({ houses, updateFilter }) => (
-    <div>
+const Search = ({ houses, updateFilter }) => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    return(
+         <div>
         <SearchNav
         />
         <div className='listing-page'>
@@ -14,6 +19,8 @@ const Search = ({ houses, updateFilter }) => (
                     updateFilter={updateFilter}
                     houses={houses}
                     singleHouse={false}
+                    dispatch={dispatch}
+                    history={history}
                 />
             </div>
             <div className="listing-page-right">
@@ -23,5 +30,7 @@ const Search = ({ houses, updateFilter }) => (
             </div>
         </div>
     </div>
-);
+    )
+   
+};
 export default Search;

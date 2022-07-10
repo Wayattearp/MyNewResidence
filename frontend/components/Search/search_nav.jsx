@@ -9,7 +9,8 @@ const SearchNav = (props) => {
     let rent;
     let buy;
     if (
-        location.pathname.includes("rent") 
+        location.pathname.includes("rent") || 
+          location.pathname.includes("houses")
     ) {
         rent = true;
     }

@@ -2,20 +2,23 @@ import React from 'react';
 import MarkerManager from '../../util/marker_manager';
 import { withRouter } from 'react-router-dom';
 
-const getCoordsObj = latLng => ({
-    lat: latLng.lat(),
-    lng: latLng.lng()
-});
 
 const mapOptions = {
     center: { lat: 40.80996540451154, lng: -73.95014070092049 }, //Harlem
     zoom: 12
 };
 
+
 class HouseMap extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    // }
+    
+    
     componentDidMount() {
+        this.history = this.props.history;
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+        this.MarkerManager = new MarkerManager(this.map);
             this.registerListeners();
             this.MarkerManager.updateMarkers(this.props.houses);
     }
@@ -39,17 +42,12 @@ class HouseMap extends React.Component {
             };
             this.props.updateFilter('bounds', bounds);
         });
-        
-        google.maps.event.addListener(this.map, 'click', (event) => {
-            const coords = getCoordsObj(event.latLng);
-            this.handleClick(coords);
-        });
-        
+
     }
     
-    handleMarkerClick(house) {
-        this.props.history.push(`houses/${house.id}`)
-    }
+    // handleMarkerClick(house) {
+    //     this.props.history.push(`houses/${house.id}`)
+    // }
     
     handleClick(coords) {
         this.props.history.push({

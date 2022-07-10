@@ -34,9 +34,14 @@ class HouseIndexItem extends React.Component {
                     <div className="property-thumbnail-container">
                         <div className="property-thumbnail">
                             <img src={this.props.house.photoUrls} />
-
+                            
                             <div className="property-thumbnail-info">
-                                <h2>${`${this.props.house.price}`} /mo</h2>
+                                {/* {console.log(this.props.house.is_rent)} */}
+                                {this.props.house.is_rent ? (
+                                    <h2>$ {`${this.props.house.price}`} /mo</h2>
+                                ) : (
+                                    <h2>$ {`${this.props.house.price.toLocaleString()}`}</h2>
+                                )}
                                 <p>{`${this.props.house.address}, ${this.props.house.city}, ${this.props.house.state} ${this.props.house.zipcode}`}</p>
                                 {this.props.house.is_rent ? "For sale" : ""}
                             </div>

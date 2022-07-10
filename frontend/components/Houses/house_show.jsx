@@ -47,7 +47,7 @@ const HouseShow = (props) => {
                         <div className="property-info">
                             <div className="property-pbbs">
                                 <div id="amount">
-                                    {house.isRent ? (
+                                    {house.is_rent ? (
                                         <p>$ {house.price} /mo</p>
                                     ) : (
                                         <p>$ {house.price.toLocaleString()}</p>

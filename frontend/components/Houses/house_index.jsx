@@ -7,12 +7,12 @@ const HouseIndex = ({ houses }) => {
     let filteredHouses;
 
     if (
-        location.pathname.includes("rent") ||
-        location.pathname.includes("houses")
+        location.pathname.includes("rent")
     ) {
         filteredHouses = houses.filter((house) => house.is_rent == true);
     }
-    if (location.pathname.includes("buy")) {
+    if (location.pathname.includes("buy") ||
+        location.pathname.includes("search")) {
         filteredHouses = houses.filter((house) => house.is_rent == false);
     }
 

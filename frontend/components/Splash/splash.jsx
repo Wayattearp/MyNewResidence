@@ -42,7 +42,7 @@ const Splash = (props) => {
                         <button className="options-btn">See your options</button>
                     </div>
                 </Link>
-                <Link to="/search">
+                <Link to="/rent">
                     <img src={window.rentimgURL} className="options-img" />
                     <h4>Rent a home</h4>
                     <p className="splash-card-content">

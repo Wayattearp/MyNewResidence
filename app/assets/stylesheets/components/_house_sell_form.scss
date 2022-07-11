@@ -1,5 +1,6 @@
 @import "../main/fonts";
-.sell-page{
+
+.sell-page {
   background-color: #f3fafe;
 }
 
@@ -8,7 +9,7 @@
   min-height: 100vh;
   background-image: image_url("sellBg1.png");
   background-size: contain;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -26,16 +27,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
-  // width: fit-content;
-  > h1 {
+  padding-top: 20vh;
+
+  >h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 50px;
     margin: 20px;
     text-shadow: -2px 1px 0 white, 2px 1px 0 white, 2px -1px 0 white,
       -2px -1px 0 white;
   }
-  > h2 {
+
+  >h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 25px;
     font-weight: 400;
@@ -43,6 +45,7 @@
     text-shadow: -1px 1px 0 white, 1px 1px 0 white, 1px -1px 0 white,
       -1px -1px 0 white;
   }
+
   top: 20%;
   color: black;
   font-weight: bolder;
@@ -74,13 +77,16 @@
   background-color: #006aff;
   box-shadow: 0px 4px 12px #d0c9c9;
   transition: 1s;
+
   &:hover {
     box-shadow: -8px 10px 8px #d0c9c9;
     transition: 0.2s;
   }
 }
+
 .logged-in {
   background-color: #ffd235;
+
   &:hover {
     // box-shadow: 4px -4px 12px #ffdc69;
     transform: scale(1.1);
@@ -91,53 +97,69 @@
 .dropzone-container {
   margin: 0 20px;
 }
+
 .house-sell-form-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.lat-lng-text {
+  margin: 2px;
 }
 
 .dropzone-container {
   height: 100vh;
-    width: 48%;
+  width: 40%;
 }
 
 .house-sell-input-container {
-  margin: 0 20px;
-  > form {
+  margin: 0 35px;
+  width: 40%;
+  >form {
     display: flex;
     flex-direction: column;
     margin: 20px;
-        align-content: center;
-          justify-content: center;
-          align-items: flex-start;
+
     input[type="text"] {
-      width: 60%;
-      border: 1px solid rgb(216, 213, 213);;
+      width: 100%;
+      border: 1px solid rgb(216, 213, 213);
+      ;
       border-radius: 3px;
       background-color: rgba(246, 246, 246, 0.948);
       padding: 13px 0px 13px 10px;
+      display: flex;
+      align-items: center;
+
       &:hover {
         border: 1px solid #006aff;
       }
+
       margin-bottom: 20px;
+      margin-right: 10px;
     }
+
+    .largefield{
+      width: 100%;
+    }
+
     label {
       display: flex;
       flex-direction: row;
       align-items: center;
       font-size: medium;
       margin: 10px;
-      > p {
-        width: 20%;
-      }
+
     }
+
     #sell-form-input {
-      width: 100%;
       display: flex;
+      justify-content: center;
+      font-size: larger;
     }
+
     textarea {
-      width: 70%;
-      height: 150px;
+      width: auto;
+      height: 21vh;
       border: 0.7px solid rgb(216, 213, 213);
       border-radius: 3px;
       background-color: rgba(246, 246, 246, 0.948);
@@ -145,17 +167,22 @@
       padding: 20px;
       font-size: medium;
     }
-    .city-state-input {
+
+    .form-row {
       display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      > div{
+        width: 40%;
+      }
     }
-    .bd-ba-input {
-      display: flex;
-    }
+
+
   }
 }
 
 .dropzone-container {
-  > h1 {
+  >h1 {
     text-align: center;
     line-height: 200px;
     color: #006aff;
@@ -168,12 +195,31 @@
   }
 }
 
-.dropdown-icon-area{
+.dropzone {
+  >div {
+    max-height: 35vh;
+  }
+
+}
+
+// .dz-preview{
+//   >img{
+//     width: auto;
+//     height: auto;
+//   }
+// }
+.miniphoto {
+  width: auto;
+}
+
+.dropdown-icon-area {
+  padding: 10%;
   font-size: xx-large;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  cursor: pointer;
 }
 
 .geo-coding-container {
@@ -182,25 +228,34 @@
   border-radius: 5px;
   margin: 20px 0;
   width: 100%;
-  > h1 {
+
+  >h1 {
     margin: 20px;
     justify-content: center;
     font-size: medium;
     display: flex;
     text-align: center;
+    font-size: larger
   }
 }
 
 .rent-sell-container {
   display: flex;
-  > div {
+  justify-content: space-evenly;
+  
+  >div {
     padding: 0 3%;
+    >label{
+      cursor: pointer;
+    }
   }
+
   input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 0;
   }
+
   label {
     display: flex;
     padding: 10px 30px;
@@ -208,11 +263,13 @@
     border-radius: 5px;
     width: 60px;
     text-align: center;
+
     :hover {
       background-color: rgb(187, 231, 255);
     }
   }
-  input[type="radio"]:checked + label {
+
+  input[type="radio"]:checked+label {
     background-color: rgb(187, 231, 255);
     border-color: #006aff;
   }
@@ -220,8 +277,20 @@
 
 .lat-lng-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: large;
+
+  #lat,
+  #long {
+    border: solid black 1px;
+    border-radius: 3px;
+    padding: 2px;
+    background-color: rgba(246, 246, 246, 0.948);
+    border: 0.7px solid #d8d5d5;
+  }
 }
+
 
 #isRent-text {
   text-align: center;
@@ -231,13 +300,16 @@
 
 #create-house-btn {
   width: 60%;
-  border: 1px solid rgb(216, 213, 213);;
-  border-radius: 3px;
+  border: 1px solid rgb(216, 213, 213);
+  ;
+  border-radius: 6px;
   background-color: #fdcf33;
-  font-size: medium;
+  font-size: larger;
+  font-weight: 600;
   padding: 13px 0px 13px 10px;
-      text-align: center;
-        align-self: center;
+  text-align: center;
+  align-self: center;
+
   &:hover {
     border: 1px solid #006aff;
     box-shadow: 0.5px 0.5px 5px 1px #009dff;
@@ -246,7 +318,7 @@
 
 #geocoding-map-container {
   width: 100%;
-  height: 400px;
+  height: 28vw;
 }
 
 #pin {

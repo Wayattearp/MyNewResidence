@@ -3,10 +3,9 @@ import { useDropzone } from "react-dropzone";
 
 const baseStyle = {
   display: "flex",
-  height: "60vh",
+  minHeight: "inherit",
   flexDirection: "column",
   alignItems: "center",
-  padding: "20px",
   borderWidth: 3,
   borderRadius: 3,
   borderColor: "#006aff",
@@ -65,7 +64,7 @@ function MyDropzone(props) {
     <div className="dropzone">
       <div {...getRootProps({ style })}>
         {thumbs.length > 0 ? (
-          <aside>{thumbs}</aside>
+          <aside id="miniphoto">{thumbs}</aside>
         ) : (
           <>
             <input {...getInputProps()} />
@@ -76,7 +75,7 @@ function MyDropzone(props) {
                   style={{
                     color: "indianred",
                     fontSize: "200px",
-                    lineHeight: "400px",
+                    lineHeight: "40%",
                     textShadow: "0 0 20px #fa559d",
                   }}></i>
                 <h1

@@ -108,65 +108,73 @@ const HouseSellForm = (props) => {
         
         <div className="house-sell-input-container">
           <form onSubmit={handleSubmit}>
-            {/* NOTE: ADDRESS */}
-            <label id="sell-form-input">
-              <p>Address</p>
-            </label>
-            <input
-              type="text"
-              value={currState.address || ""}
-              onChange={(e) => onInput(e, "address")}
-              required
-            />
-
-            {/* NOTE: CITY & STATE */}
-            <div className="city-state-input">
+            <div className="form-row ">
+              <div>
+              <label id="sell-form-input">
+                <p>Address</p>
+              </label>
+              <input
+                type="text"
+                value={currState.address || ""}
+                onChange={(e) => onInput(e, "address")}
+                required
+              />
+              </div>
               <div>
                 <label id="sell-form-input">
                   <p>City</p>
                 </label>
                 <input
+                  id="city-input"
                   type="text"
                   value={currState.city || ""}
                   onChange={(e) => onInput(e, "city")}
                   required
                 />
               </div>
-              <div>
+            </div>
+
+            <div className="form-row ">
+                <div>
+                  <label id="sell-form-input">
+                    <p>State</p>
+                  </label>
+                  <input
+                    id="state-input"
+                    type="text"
+                    value={currState.state || ""}
+                    onChange={(e) => onInput(e, "state")}
+                    required
+                  />
+                </div>
+                
+                <div>
                 <label id="sell-form-input">
-                  <p>State</p>
+                  <p>Zipcode</p>
                 </label>
                 <input
                   type="text"
-                  value={currState.state || ""}
-                  onChange={(e) => onInput(e, "state")}
+                  value={currState.zipcode || ""}
+                  onChange={(e) => onInput(e, "zipcode")}
+                  required
+                />
+                </div>
+              </div>
+
+
+            <div className="form-row ">
+              <div>
+                <label id="sell-form-input">
+                  <p>Price</p>
+                </label>
+                <input
+                  type="text"
+                  value={currState.price || ""}
+                  onChange={(e) => onInput(e, "price")}
                   required
                 />
               </div>
-            </div>
 
-            {/* NOTE: Zipcode */}
-            <label id="sell-form-input">
-              <p>Zipcode</p>
-            </label>
-            <input
-              type="text"
-              value={currState.zipcode || ""}
-              onChange={(e) => onInput(e, "zipcode")}
-              required
-            />
-            {/* NOTE: Price */}
-            <label id="sell-form-input">
-              <p>Price</p>
-            </label>
-            <input
-              type="text"
-              value={currState.price || ""}
-              onChange={(e) => onInput(e, "price")}
-              required
-            />
-            {/* NOTE: Bedrooms Bathrooms */}
-            <div className="bd-ba-input">
               <div>
                 <label id="sell-form-input">
                   <p>Bedrooms</p>
@@ -178,6 +186,9 @@ const HouseSellForm = (props) => {
                   required
                 />
               </div>
+            </div>
+
+            <div className="form-row ">
               <div>
                 <label id="sell-form-input">
                   <p>Bathrooms</p>
@@ -251,7 +262,7 @@ const HouseSellForm = (props) => {
           {/* NOTE: MAP */}
           <div className="geo-coding-container">
             <h1>
-              Click map to get coordinates{" "}
+              Click on the map to set coordinates{" "}
               <img
                 src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
                 id="pin"
@@ -263,10 +274,11 @@ const HouseSellForm = (props) => {
           {/* NOTE: LAT LNG */}
           <div className="lat-lng-container">
             <div>
-              <label id="sell-form-input">
-                <p>Latitude</p>
+              <label>
+                <p className="lat-lng-text">Latitude</p>
               </label>
-              <input
+              <input 
+                id="lat"
                 type="text"
                 value={currState.lat || ""}
                 onChange={(e) => onInput(e, "lat")}
@@ -274,10 +286,11 @@ const HouseSellForm = (props) => {
               />
             </div>
             <div>
-              <label id="sell-form-input">
-                <p>Longitude </p>
+              <label>
+                <p className="lat-lng-text">Longitude </p>
               </label>
               <input
+                id="long"
                 type="text"
                 value={currState.lng || ""}
                 onChange={(e) => onInput(e, "lng")}

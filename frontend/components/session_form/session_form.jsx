@@ -127,7 +127,7 @@ const SessionForm = (props) => {
         </div>
 
         <div className="session-btn">
-          <button>{formType == "login" ? "Submit" : "Sign Up"}</button>
+          <button id="submit-btn-sign-up">{formType == "login" ? "Submit" : "Sign Up"}</button>
           <p> Or connect with:</p>
           <button onClick={handleDemoUser} id="demo-btn">
             Sign in with Demo User

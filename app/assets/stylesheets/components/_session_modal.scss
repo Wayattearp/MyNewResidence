@@ -114,6 +114,12 @@
   }
 }
 
+#submit-btn-sign-up{
+      font-weight: 500;
+      background-color: #126efb;
+      color: white;
+}
+
 .session-btn {
   text-align: center;
   display: flex;
@@ -123,6 +129,7 @@
   > button {
     padding: 10px;
     font-size: 16px;
+      transition: 1s;
   }
   > p {
     text-align: center;
@@ -130,7 +137,17 @@
     margin: 10px 0 10px 0;
   }
   #demo-btn {
-    background-color: black;
     color: white;
+    background: black;
   }
 }
+
+  #submit-btn-sign-up:hover {
+      transform: scale(1.1);
+        transition: 0.2s;
+  }
+  
+  #demo-btn:hover {
+    transform: scale(1.1);
+      transition: 0.2s;
+  }

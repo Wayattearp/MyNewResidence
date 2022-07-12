@@ -6,6 +6,7 @@ import { createHouse } from "../../util/house_utils";
 import MyDropzone from "./dropzone";
 import GeocodingMap from "../Map/geocoding_map";
 import { useSelector } from "react-redux";
+import Footer from "../Footer/footer"
 
 
 const HouseSellForm = (props) => {
@@ -252,8 +253,8 @@ const HouseSellForm = (props) => {
               required
             />
             {/* NOTE: submit button */}
-            <button type="submit" id="create-house-btn">
-              Create House!
+            <button type="submit" id="post-house-btn">
+              Post House!
             </button>
           </form>
         </div>
@@ -301,6 +302,7 @@ const HouseSellForm = (props) => {
           <MyDropzone handleFiles={handleFiles} />
         </div>
       </div>
+     <Footer/>
     </div>
   );
 };

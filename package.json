@@ -22,9 +22,16 @@
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.0"
   },
+  
   "version": "0.1.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
+
+    "engines": {
+      "node": "16.4.0",
+      "npm": "7.18.1"
+    },
+
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -32,7 +39,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",

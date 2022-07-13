@@ -2,17 +2,20 @@
   width: auto;
   max-height: 20vh;
   margin-top: 10px;
-  > div {
+
+  >div {
     margin: 20px;
     height: fit-content;
     font-size: 16px;
     text-align: center;
     line-height: 40px;
-    > * {
+
+    >* {
       justify-content: center;
       align-items: center;
       width: 100%;
     }
+
     a {
       margin: 0 20px;
     }
@@ -25,30 +28,42 @@
     align-items: center;
     font-size: 48px;
     color: rgb(2, 85, 149);
-    > * {
+
+    >* {
       margin: 0 50px;
-    };
-  }
-
-  #github{
-    animation-name: color;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate-reverse;
-      animation-timing-function: ease-in-out;
-  }
-
-    @keyframes color {
-      from {
-        color: inherit;
-      }
-
-      to {
-        color: rgb(48, 148, 223);
-      }
     }
 
-  .footer-img{
+    ;
+  }
+
+  #github {
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+
+
+  }
+
+  #github:hover {
+    background-color: radial-gradient(circle, rgb(219, 73, 0) 0%, rgba(255, 252, 0, 1) 0%, rgba(253, 207, 51, 0.957) 100%);
+
+  }
+
+
+
+  @keyframes color {
+    from {
+      color: inherit;
+    }
+
+    to {
+      color: rgb(48, 148, 223);
+    }
+  }
+
+  .footer-img {
     width: 100%;
     height: auto;
     max-height: 620px;

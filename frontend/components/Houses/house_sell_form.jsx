@@ -254,7 +254,7 @@ const HouseSellForm = (props) => {
             />
             {/* NOTE: submit button */}
             <button type="submit" id="post-house-btn">
-              Post House!
+              Post
             </button>
           </form>
         </div>

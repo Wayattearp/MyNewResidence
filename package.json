@@ -40,7 +40,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development",
     "build": "webpack --mode=production",
-    "postinstall": "webpack"
+    "postinstall": "webpack --mode=production"
   },
   "repository": {
     "type": "git",

@@ -83,7 +83,7 @@ function MyDropzone(props) {
                     color: "indianred",
                     textShadow: "0 0 20px #fa559d",
                   }}>
-                  Drop your photo in the frame.
+                  Drop the photo in the frame.
                 </h1>
               </>
             ) : (

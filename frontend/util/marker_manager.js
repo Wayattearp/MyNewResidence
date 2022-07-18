@@ -40,8 +40,18 @@ class MarkerManager {
             disableAutoPan: true,
         });
 
+        const toggleBounce = () => {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
         const onClick = () => {
-            this.history.push(`houses/${newHouse.id}`);
+            // this.history.push(`houses/${newHouse.id}`);
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            marker.toggleBounce();
         };
 
         const mouseOver = () => {
@@ -59,6 +69,7 @@ class MarkerManager {
             infoWindow: houseInfoWindow,
             houseId: newHouse.id,
             icon: window.markerUrl,
+            animation: google.maps.Animation.DROP,
         });
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);

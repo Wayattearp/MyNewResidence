@@ -34,7 +34,7 @@ const Search = ({ houses, updateFilter }) => {
                 <div className="listing-page-left">
                     <HouseMap
                         updateFilter={updateFilter}
-                        houses={houses}
+                        houses={filteredHouses}
                         singleHouse={false}
                         dispatch={dispatch}
                         history={history}

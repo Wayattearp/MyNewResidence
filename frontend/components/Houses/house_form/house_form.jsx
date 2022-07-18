@@ -212,7 +212,7 @@ class HouseForm extends React.Component {
                         />
 
                         <h3 className="button-holder">Add a Picture</h3>
-                        <input type="file" className="new-bench-button"
+                        <input type="file" className="new-house-button"
                             onChange={this.handleFile.bind(this)} />
 
                         <div className="button-holder">

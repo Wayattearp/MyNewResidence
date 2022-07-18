@@ -73,15 +73,15 @@ function MyDropzone(props) {
                 <i
                   className="fas fa-cloud-upload-alt"
                   style={{
-                    color: "indianred",
-                    fontSize: "200px",
+                    color: "green",
+                    fontSize: "40px",
                     lineHeight: "40%",
-                    textShadow: "0 0 20px #fa559d",
+                    textShadow: "0 0 20px green",
                   }}></i>
                 <h1
                   style={{
-                    color: "indianred",
-                    textShadow: "0 0 20px #fa559d",
+                    color: "green",
+                    textShadow: "0 0 20px green",
                   }}>
                   Drop the photo in the frame.
                 </h1>

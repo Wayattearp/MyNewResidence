@@ -15,7 +15,7 @@ const HeaderNav = () => {
         <img className="logo" src={window.logoURL} />
       </Link>
       <div className="NavHeader-right">
-        <a href="https://www.linkedin.com/in/anton-pinchuk-05443a1a4/"> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/anton-miles-05443a1a4/"> LinkedIn</a>
         <a href="https://github.com/Wayattearp">Github</a>
         <UserIcon />
         <Modal />

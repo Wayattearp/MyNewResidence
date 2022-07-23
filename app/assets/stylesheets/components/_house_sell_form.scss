@@ -390,7 +390,7 @@
 
 #post-house-btn {
   font-family: 'Satisfy', cursive;
-  width: 40%;
+  width: auto;
   border: 1px solid rgb(216, 213, 213);
   color: white;
   box-shadow: 0.5px 0.5px 5px 1px rgb(255, 255, 255);
@@ -398,7 +398,7 @@
   background: #014a82;
   font-size: xx-large;
   font-weight: 600;
-  padding: 1%;
+  padding: 4px 12px;
   text-align: center;
   align-self: center;
   transition: 1s;

@@ -2,8 +2,8 @@ import React from "react";
 import MarkerManager from "../../util/marker_manager";
 
 const mapOptions = {
-  center: { lat: 40.740879, lng: -73.987135 },
-  zoom: 13,
+  center: { lat: 40.704935, lng: -74.012567 },
+  zoom: 12,
   disableDefaultUI: true,
   mapTypeControl: false,
   streetViewControl: false,

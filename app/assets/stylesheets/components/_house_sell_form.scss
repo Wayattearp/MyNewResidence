@@ -320,7 +320,7 @@
     font-size: medium;
     display: flex;
     text-align: center;
-    font-size: larger
+    line-height: 30px;
   }
 }
 
@@ -420,8 +420,10 @@
 #pin {
   width: auto;
   height: inherit;
-}
+  margin-left: 8px;
+  line-height: 10px;
 
+}
 .sell-background {
   width: 100vw;
   height: 100vh;

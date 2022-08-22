@@ -265,7 +265,7 @@ const HouseSellForm = (props) => {
             <h1>
               Click on the map to set coordinates{" "}
               <img
-                src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                src={window.markerUrl}
                 id="pin"
               />
             </h1>

@@ -75,11 +75,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+  production:
+    url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: MyNewResidence_production
-  username: MyNewResidence
-  password: <%= ENV['MYNEWRESIDENCE_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: MyNewResidence_production
+#   username: MyNewResidence
+#   password: <%= ENV['MYNEWRESIDENCE_DATABASE_PASSWORD'] %>

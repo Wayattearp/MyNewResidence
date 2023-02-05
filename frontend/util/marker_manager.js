@@ -49,9 +49,10 @@ class MarkerManager {
         }
 
         const onClick = () => {
-            // this.history.push(`houses/${newHouse.id}`);
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-            marker.toggleBounce();
+            console.log(this)
+            this.history.push(`houses/${newHouse.id}`);
+            // marker.setAnimation(google.maps.Animation.BOUNCE);
+            // marker.toggleBounce();
         };
 
         const mouseOver = () => {
@@ -73,7 +74,7 @@ class MarkerManager {
         });
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
-        // marker.addListener("click", onClick);
+        marker.addListener("click", onClick);
         this.markers[marker.houseId] = marker;
     }
 

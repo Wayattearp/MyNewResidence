@@ -9,16 +9,12 @@ const mapOptions = {
 };
 
 
-class HouseMap extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-    
+class HouseMap extends React.Component {    
     
     componentDidMount() {
         this.history = this.props.history;
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map);
+        this.MarkerManager = new MarkerManager(this.map, this.history);
             this.registerListeners();
             this.MarkerManager.updateMarkers(this.props.houses);
     }

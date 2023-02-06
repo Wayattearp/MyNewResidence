@@ -8,7 +8,6 @@ services:
   - type: web
     name: MyNewresidence
     env: ruby
-    plan: starter
     # buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:

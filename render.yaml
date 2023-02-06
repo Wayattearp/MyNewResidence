@@ -1,7 +1,7 @@
 databases:
   - name: MyNewresidence
-    databaseName: myNewResidence_production
-    user: myNewResidence
+    databaseName: mynewresidence_production
+    user: wayattearp
 
 
 services:

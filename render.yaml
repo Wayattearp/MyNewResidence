@@ -1,12 +1,12 @@
 databases:
-  - name: MyNewresidence
+  - name: residence_production
     databaseName: residence_production
     user: wayattearp
 
 
 services:
   - type: web
-    name: MyNewresidence
+    name: residence_production
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"

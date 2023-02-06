@@ -15,5 +15,5 @@ services:
         fromDatabase:
           name: residence_production
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: config/master.key
         sync: false

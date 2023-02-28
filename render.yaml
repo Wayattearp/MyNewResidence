@@ -1,5 +1,5 @@
 databases:
-  - name: residence_production
+  - name: residence
     databaseName: residence_production
     user: wayattearp
 
@@ -15,5 +15,5 @@ services:
         fromDatabase:
           name: residence_production
           property: connectionString
-      - key: config/master.key
+      - key: RAILS_MASTER_KEY
         sync: false

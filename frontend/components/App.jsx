@@ -5,7 +5,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HouseFormContainer from '../components/Houses/house_form/house_form_container';
 import SearchContainer from '../components/Search/search_container';
-import HouseSell from './Houses/house_sell';
+// import HouseSell from './Houses/house_sell';
 import HouseShowContainer from './Houses/house_show_container';
 import Splash from "./Splash/splash";
 import HeaderNav from "./Navs/header_nav";
@@ -20,8 +20,8 @@ const App = () => (
             <ProtectedRoute exact path="/search" component={SearchContainer} />
             <ProtectedRoute exact path="/buy" component={SearchContainer} />
             <ProtectedRoute exact path="/rent" component={SearchContainer} />
-            <ProtectedRoute exact path="/sell" component={HouseSell} />
-            <ProtectedRoute exact path="/sell/form" component={HouseSellForm} />
+            {/* <ProtectedRoute exact path="/sell" component={HouseSell} /> */}
+            <ProtectedRoute exact path="/sell" component={HouseSellForm} />
             <ProtectedRoute exact path="/houses/new" component={HouseFormContainer} />
             <ProtectedRoute exact path="/houses/:id" component={HouseShowContainer} />
             <Route exact path="/" component={Splash} />

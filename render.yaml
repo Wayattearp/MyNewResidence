@@ -8,7 +8,6 @@ services:
   - type: web
     name: MyNewResidence
     env: ruby
-    initialDeployHook: ./db/seeds.rb
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
@@ -17,4 +16,4 @@ services:
           name: residence_production
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync: true
+        sync: false

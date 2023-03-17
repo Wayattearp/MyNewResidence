@@ -1,5 +1,5 @@
 databases:
-  - name: residence
+  - name: residence_production
     databaseName: residence_production
     user: wayattearp
 

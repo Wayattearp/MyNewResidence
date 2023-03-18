@@ -11,7 +11,7 @@ const HouseSell = (props) => {
 
   return (
     <div className="sell-page">
-      <img src={window.sellBg1} className="sell-background" />
+      {/* <img src={window.sellBg1} className="sell-background" /> */}
       <div className="main-sell">
         <div className="sell-slogan">
           <h1>Sell your residence with confidence</h1>

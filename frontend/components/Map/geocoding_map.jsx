@@ -50,7 +50,7 @@ const GeocodingMap = (props) => {
 
     const marker = new google.maps.Marker({
       position,
-      map: map,
+      map,
       icon: window.markeryellowUrl,
     });
     markers.push(marker);

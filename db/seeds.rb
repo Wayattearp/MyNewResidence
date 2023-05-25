@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require "open-uri"
 require "faker"
 
@@ -18,12 +19,14 @@ State.delete_all
 demoUser = User.create!(username: "DemoUser", password: "password148")
 demoUser.save!
 
-newyork = City.create!(name: "new york")
-brooklyn = City.create!(name: "brooklyn")
-queens = City.create!(name: "queens")
-bronx = City.create!(name: "bronx")
+manhattan = City.create!(name: "Manhattan")
+brooklyn = City.create!(name: "Brooklyn")
+queens = City.create!(name: "Queens")
+bronx = City.create!(name: "Bronx")
+fortlee = City.create!(name: "Fort Lee")
+edgewater = City.create!(name: "Edgewater")
+unioncity = City.create!(name: "Union City")
 
-cities = [newyork, brooklyn, queens, bronx]
 descriptions = [
   "Luxurious Colonial features impeccable finishes throughout, from beautiful, original hardwood floors, to a gorgeous antique marble fireplace. The updated interiors feature a soft monochromatic palette and clean lines, and outside, the beautiful, landscaped lot is the work of the popular landscape architecture firm Richards Hooper.",
   "Fully-renovated brick row home features heart pine hardwood floors and a full smart home system including a Nest thermostat and a Ring doorbell. In the chef’s kitchen, there are stainless steel Bosch appliances, travertine waterfall counters, and a Breville espresso machine. And upstairs, the ensuite master bath features twin Grohe basins.",
@@ -31,67 +34,90 @@ descriptions = [
   "This modern residence offers inspiring spaces and an exceptional amount of outdoor space. The great room features cathedral ceilings, multiple exposures, and a custom chandelier, while the updated kitchen boasts quartz countertops and Wolfe stainless steel appliances, and opens via double doors onto a massive wooden deck that overlooks the backyard koi pond."
 ]
 
-ny = State.create!(name: "NY")
-zipcodes = [
-  10001,
-  10002,
-  10003,
-  10004,
-  10005,
-  10006,
-  10007,
-  10008,
-  10009,
-  10010,
-  10011,
-  10012,
-  10013,
-  10014,
-  10015,
-  10016,
-  10017,
-  10018,
-  10019,
-  10020,
-  10021,
-  10022,
-  10023,
-  10024,
-  10025,
-  10026,
-  10027,
-  10028,
-  10029,
-  10030,
-  10031,
-  10032,
-  10033,
-  10034,
-  10035,
-  10036,
-  10037,
-  10038,
-  10038,
-  10039,
-  10040,
-  10041,
-  10044,
-  10045,
-  10048,
+ny = State.create!(name: "New York");
+nj = State.create!(name: "New Jersey");
+states = [ny, nj];
+
+manhattanz = [10001,10002,10003,10004,10005,10006,10007,10008,10009,10010,10011,10012,
+  10013,10014,10015,10016,10017,10018,10019,10020,10021,10022,10023,10024,10025,10026,
+  10027,10028,10029,10030,10031,10032,10033,10034,10035,10036,10037,10038,10038,10039,
+  10040,10041,10044,10045,10048
 ]
+
+brooklynz = [11201, 11202, 11203, 11204, 11205, 11206, 11207, 11208, 11209, 11210, 11211, 11212, 11213, 11214, 11215 ]
+
+bronxz = [10467, 10456, 10458, 10453, 10457, 10452, 10468,
+10469, 10462, 10466, 10463, 10472, 10460, 10473]
+
+queensz = [11004 , 11004, 11005, 11101, 11101, 11102, 11102, 11103, 11103, 11104, 11104, 11104, 11105, 11105, 11106,
+11106, 11109, 11351, 11352, 11354, 11355, 11356, 11356, 11357, 11357, 11357, 11358, 11359, 11359, 11359, 11360, 11360, 11361, 11361, 11362, 11362, 11362, 11363, 11363]
+
+fortleez = [7024, 7010, 7605]
+edgewaterz = [7020, 7086]
+unioncityz = [7087]
+
+nyzipcodes = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx']
+njzipcodes = ['Fort Lee', 'Edgewater', 'Union City']
 
 # rents
 num_rents = 1
 20.times do |i|
   house = House.new
-  house.lat = 40.746809 + rand(0.005..0.04) * [1, -1].sample
-  house.lng = -73.987422 + rand(0.005..0.04) * [1, -1].sample
+  house.state = states.sample
+  if house.state == ny 
+    house.state_id = ny.id
+    zipcode = nyzipcodes.sample
+    case zipcode
+      when 'Manhattan'
+        house.zipcode = manhattanz.sample
+           house.lat = rand(40.7000..40.8800)
+           house.lng = rand(-74.0200..-73.9000)
+            house.city_id = manhattan.id
+            house.city = manhattan
+      when 'Brooklyn'
+        house.zipcode = brooklynz.sample
+          house.lat = rand(40.5700..40.7300)
+          house.lng = rand(-74.0500..-73.8500)
+          house.city_id = brooklyn.id
+          house.city = brooklyn
+      when 'Queens'
+        house.zipcode = queensz.sample
+        house.lat = rand(40.5400..40.8000)
+        house.lng = rand(-73.9600..-73.7000)
+        house.city_id = queens.id
+        house.city = queens
+      when 'Bronx'
+        house.zipcode = bronxz.sample
+        house.lat = rand(40.7850..40.9300)
+        house.lng = rand(-73.9300..-73.8000)
+        house.city_id = bronx.id
+            house.city = bronx
+      end
+    else 
+      house.state_id = nj.id
+      zipcode = njzipcodes.sample
+    case zipcode
+      when 'Fort Lee'
+        house.zipcode = fortleez.sample
+        house.lat = rand(40.8419..40.8684)
+        house.lng = rand(-73.9817..-73.9586)
+        house.city_id = fortlee.id
+        house.city = fortlee
+      when 'Edgewater'
+        house.zipcode = edgewaterz.sample
+        house.lat = rand(40.8000..40.8200)
+        house.lng = rand(-73.9900..-73.9700)
+        house.city_id = edgewater.id
+        house.city = edgewater
+      when 'Union City'
+        house.zipcode = unioncityz.sample
+        house.lat = rand(40.7515..40.7731)
+        house.lng = rand(-74.0336..-74.0036)
+        house.city_id = unioncity.id
+        house.city = unioncity
+      end
+  end
   house.address = Faker::Address.street_address
-  house.city_id = cities.sample.id
-  house.city = cities.sample
-  house.state_id = ny.id
-  house.state = ny
-  house.zipcode = zipcodes.sample
   house.price = rand(1500..10000) / 100 * 100
   house.beds = rand(1..6)
   house.baths = rand(1..5)
@@ -127,14 +153,61 @@ end
 num_buys = 20
 20.times do |i|
   house = House.new
-  house.lat = 40.746809 + rand(0.005..0.04) * [1, -1].sample
-  house.lng = -73.987422 + rand(0.005..0.04) * [1, -1].sample
+  house.state = states.sample
+  if house.state == ny 
+    house.state_id = ny.id
+    zipcode = nyzipcodes.sample
+    case zipcode
+      when 'Manhattan'
+        house.zipcode = manhattanz.sample
+           house.lat = rand(40.7000..40.8800)
+           house.lng = rand(-74.0200..-73.9000)
+            house.city_id = manhattan.id
+            house.city = manhattan
+      when 'Brooklyn'
+        house.zipcode = brooklynz.sample
+          house.lat = rand(40.5700..40.7300)
+          house.lng = rand(-74.0500..-73.8500)
+          house.city_id = brooklyn.id
+          house.city = brooklyn
+      when 'Queens'
+        house.zipcode = queensz.sample
+        house.lat = rand(40.5400..40.8000)
+        house.lng = rand(-73.9600..-73.7000)
+        house.city_id = queens.id
+        house.city = queens
+      when 'Bronx'
+        house.zipcode = bronxz.sample
+        house.lat = rand(40.7850..40.9300)
+        house.lng = rand(-73.9300..-73.8000)
+        house.city_id = bronx.id
+            house.city = bronx
+      end
+    else 
+      house.state_id = nj.id
+      zipcode = njzipcodes.sample
+    case zipcode
+      when 'Fort Lee'
+        house.zipcode = fortleez.sample
+        house.lat = rand(40.8419..40.8684)
+        house.lng = rand(-73.9817..-73.9586)
+        house.city_id = fortlee.id
+        house.city = fortlee
+      when 'Edgewater'
+        house.zipcode = edgewaterz.sample
+        house.lat = rand(40.8000..40.8200)
+        house.lng = rand(-73.9900..-73.9700)
+        house.city_id = edgewater.id
+        house.city = edgewater
+      when 'Union City'
+        house.zipcode = unioncityz.sample
+        house.lat = rand(40.7515..40.7731)
+        house.lng = rand(-74.0336..-74.0036)
+        house.city_id = unioncity.id
+        house.city = unioncity
+      end
+  end
   house.address = Faker::Address.street_address
-  house.city_id = cities.sample.id
-  house.city = cities.sample
-  house.state_id = ny.id
-  house.state = ny
-  house.zipcode = zipcodes.sample
   house.price = rand(500000..10000000) / 5000 * 1000
   house.beds = rand(1..6)
   house.baths = rand(1..5)

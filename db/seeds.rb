@@ -38,11 +38,7 @@ ny = State.create!(name: "New York");
 nj = State.create!(name: "New Jersey");
 states = [ny, nj];
 
-manhattanz = [10001,10002,10003,10004,10005,10006,10007,10008,10009,10010,10011,10012,
-  10013,10014,10015,10016,10017,10018,10019,10020,10021,10022,10023,10024,10025,10026,
-  10027,10028,10029,10030,10031,10032,10033,10034,10035,10036,10037,10038,10038,10039,
-  10040,10041,10044,10045,10048
-]
+manhattanz = [10000, 10001, 10002, 10003, 10004, 10005, 10048]
 
 brooklynz = [11201, 11202, 11203, 11204, 11205, 11206, 11207, 11208, 11209, 11210, 11211, 11212, 11213, 11214, 11215 ]
 
@@ -70,8 +66,8 @@ num_rents = 1
     case zipcode
       when 'Manhattan'
         house.zipcode = manhattanz.sample
-           house.lat = rand(40.7000..40.8800)
-           house.lng = rand(-74.0200..-73.9000)
+           house.lat = rand(40.7640..40.8009)
+           house.lng = rand(-73.9814..-73.9584)
             house.city_id = manhattan.id
             house.city = manhattan
       when 'Brooklyn'
@@ -100,19 +96,19 @@ num_rents = 1
       when 'Fort Lee'
         house.zipcode = fortleez.sample
         house.lat = rand(40.8419..40.8684)
-        house.lng = rand(-73.9817..-73.9586)
+        house.lng = rand(-73.9917..-73.9686)
         house.city_id = fortlee.id
         house.city = fortlee
       when 'Edgewater'
         house.zipcode = edgewaterz.sample
         house.lat = rand(40.8000..40.8200)
-        house.lng = rand(-73.9900..-73.9700)
+        house.lng = rand(-74.0100..-73.9900)
         house.city_id = edgewater.id
         house.city = edgewater
       when 'Union City'
         house.zipcode = unioncityz.sample
-        house.lat = rand(40.7515..40.7731)
-        house.lng = rand(-74.0336..-74.0036)
+        house.lat = rand(40.7515..40.7631)
+        house.lng = rand(-74.0536..-74.0236)
         house.city_id = unioncity.id
         house.city = unioncity
       end
@@ -160,8 +156,8 @@ num_buys = 20
     case zipcode
       when 'Manhattan'
         house.zipcode = manhattanz.sample
-           house.lat = rand(40.7000..40.8800)
-           house.lng = rand(-74.0200..-73.9000)
+           house.lat = rand(40.7640..40.8009)
+           house.lng = rand(-73.9814..-73.9584)
             house.city_id = manhattan.id
             house.city = manhattan
       when 'Brooklyn'
@@ -190,19 +186,19 @@ num_buys = 20
       when 'Fort Lee'
         house.zipcode = fortleez.sample
         house.lat = rand(40.8419..40.8684)
-        house.lng = rand(-73.9817..-73.9586)
+        house.lng = rand(-73.9917..-73.9686)
         house.city_id = fortlee.id
         house.city = fortlee
       when 'Edgewater'
         house.zipcode = edgewaterz.sample
         house.lat = rand(40.8000..40.8200)
-        house.lng = rand(-73.9900..-73.9700)
+        house.lng = rand(-74.0100..-73.9900)
         house.city_id = edgewater.id
         house.city = edgewater
       when 'Union City'
         house.zipcode = unioncityz.sample
-        house.lat = rand(40.7515..40.7731)
-        house.lng = rand(-74.0336..-74.0036)
+        house.lat = rand(40.7515..40.7631)
+        house.lng = rand(-74.0536..-74.0236)
         house.city_id = unioncity.id
         house.city = unioncity
       end

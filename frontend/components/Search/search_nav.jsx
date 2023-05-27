@@ -68,7 +68,7 @@ const SearchNav = (props) => {
                 <div className="search-box">
                     <input
                         type="text"
-                        placeholder="Address, neighborhood, or ZIP"
+                        placeholder="State, neighborhood, or ZIP"
                         value={query}
                         onChange={handleQuery}
                     />

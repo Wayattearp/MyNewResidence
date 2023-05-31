@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapOptions = {
-    center: { lat: 40.704935, lng: -74.012567 },
+    center: { lat: 40.81120884751844, lng: -73.9656890580613 },
     zoom: 12,
 };
 

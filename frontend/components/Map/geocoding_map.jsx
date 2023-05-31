@@ -6,7 +6,7 @@ const GeocodingMap = (props) => {
   
   let markers = [];
   const mapOptions = {
-    center: { lat: 40.77247667478867, lng: -73.96232993103025 },
+    center: { lat: 40.81120884751844, lng: -73.9656890580613 },
     zoom: 13,
     disableDefaultUI: true,
     mapTypeControl: false,

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from "react-redux";
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import HouseIndexItem from './house_index_item';
+import { removeAllFilters } from '../../actions/filter_actions'
 
 const HouseIndex = ({ houses }) => {
     const location = useLocation();
     let filteredHouses;
+    const dispatch = useDispatch();
+    useEffect(() => dispatch(removeAllFilters()), []);
+    // The empty array ensures it is called only once, on the first render.
 
     if (
         location.pathname.includes("rent")
@@ -25,6 +30,7 @@ const HouseIndex = ({ houses }) => {
             />
         );
     });
+
     return (
         <div className="property-index-container">
             {mappedHouses.length > 0 ? (

@@ -68,11 +68,11 @@ const HouseSellForm = (props) => {
 
   const handleInputVals = () => {
     if (!isNaN(parseInt(currState.city))) {
-      window.alert("City name should be String");
+      window.alert("Check City name");
       return false;
     }
     if (!isNaN(parseInt(currState.state))) {
-      window.alert("State name should be String");
+      window.alert("Check State name");
       return false;
     }
     if (isNaN(parseInt(currState.zipcode)) || currState.zipcode.length != 5) {

@@ -27,7 +27,7 @@ const SearchBar = () => {
         id="search-bar"
         type="search"
         value={query}
-        placeholder="Enter a State, Neighborhood or ZIP code"
+        placeholder="Enter a State, Neighborhood or ZIP code. E.g. Fort Lee"
         onChange={handleAreaSearch}
       />
       <button className="search-btn">

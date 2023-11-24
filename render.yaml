@@ -1,6 +1,6 @@
 databases:
-  - name: residence_pro
-    databaseName: residence_pro
+  - name: residence_p
+    databaseName: residence_p
     user: wayattearp
 
 
@@ -13,7 +13,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: residence_pro
+          name: residence_p
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

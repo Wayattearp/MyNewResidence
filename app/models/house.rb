@@ -78,6 +78,7 @@ class House < ApplicationRecord
     end
 
     return self.in_bounds(params).where("city_id=? OR state_id=? OR zipcode BETWEEN ? AND ?", city_id, state_id, minrange, maxrange)
+    # helps prevent SQL injection attacks and improves query efficiency
   end
 
   end

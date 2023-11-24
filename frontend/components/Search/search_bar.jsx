@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { updateFilter } from "../../actions/filter_actions";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   
@@ -11,7 +11,6 @@ const SearchBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleAreaSearch = (e) => {
-    //setQuery
     setQuery(e.currentTarget.value);
   };
 
@@ -28,7 +27,7 @@ const SearchBar = (props) => {
         id="search-bar"
         type="search"
         value={query}
-        placeholder="Enter a State, Neighborhood or ZIP code"
+        placeholder="Enter a State, Neighborhood or ZIP code. E.g. Fort Lee"
         onChange={handleAreaSearch}
       />
       <button className="search-btn">

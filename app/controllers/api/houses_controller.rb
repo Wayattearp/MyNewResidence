@@ -1,5 +1,6 @@
 class Api::HousesController < ApplicationController
-
+# The `with_attached_photos` call is a scope in Rails ActiveStorage that helps avoid N+1 queries. 
+# The call causes ActiveRecord to load all associated ActiveStorage::Blob associations when you fetch a list of models
   def index
     if params[:bounds]
       if params[:query]

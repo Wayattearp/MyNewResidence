@@ -78,8 +78,8 @@ test:
   production:
     <<: *default
     url: <%= ENV['DATABASE_URL'] %>
-    database: mynewresidence_production
-    username: Wayattearp
+    database: residence_production
+    username: residence_production_8v07_user
 #
 # production:
 #   <<: *default
